@@ -38,7 +38,7 @@ public class SushiCategoryScreen extends AppCompatActivity {
         CategorySushiScreenList.setLayoutManager(new GridLayoutManager(this, 2));
 
 
-        sushiModels.add(new SushiModel(R.drawable.nigirispng, "Salmon Nigiri", "0", "0"));
+        sushiModels.add(new SushiModel(R.drawable.nigiripng, "Salmon Nigiri", "0", "0"));
         sushiModels.add(new SushiModel(R.drawable.sashimipng, "Salmon Sashimi", "1", "0"));
         sushiModels.add(new SushiModel(R.drawable.californiarollpng, "California Roll", "2", "0"));
         sushiModels.add(new SushiModel(R.drawable.tempurarollpng, "Tempura Roll", "3", "0"));

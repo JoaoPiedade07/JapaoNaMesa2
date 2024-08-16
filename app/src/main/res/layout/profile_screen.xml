@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
-        android:text="joaopiedade"
+        android:text="User name"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="4dp"
-        android:text="Joao Piedade"
+        android:text="Profile name"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UserName" />
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
-        android:text="I love coffe and gyosas"
+        android:text="Description"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ProfileName" />
@@ -88,7 +88,7 @@
         app:layout_constraintTop_toBottomOf="@+id/EditProfileBtn">
 
         <ImageView
-            android:layout_width="15dp"
+            android:layout_width="12dp"
             android:layout_height="match_parent"
             android:layout_marginTop="8dp"
             android:layout_marginStart="10dp"
@@ -99,53 +99,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
-            android:text="Achievements"
+            android:text="Activity"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/EditProfileBtn" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="0/13"
-            android:textSize="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/progressBar"
-            app:layout_constraintStart_toEndOf="@+id/textView2" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="(0%)"
-            android:textSize="14dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="10dp"/>
-
     </LinearLayout>
-
-
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_margin="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/LayoutAchievements"
-        tools:layout_editor_absoluteX="10dp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/AchievementsList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clipToPadding="false"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

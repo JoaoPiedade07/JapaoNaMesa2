@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -11,11 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.japaonamesa.Adapter.Fav.FavDB;
-import com.example.japaonamesa.Adapter.Fav.FavouriteAdapter;
 import com.example.japaonamesa.FavouriteScreen.FavDB.FavItem;
 import com.example.japaonamesa.HomeScreen.HomeScreen;
-import com.example.japaonamesa.Model.Fav.FavouriteModel;
 import com.example.japaonamesa.ProfileScreen.ProfileScreen;
 import com.example.japaonamesa.R;
 
@@ -28,8 +26,8 @@ public class FavouriteScreen extends AppCompatActivity {
 
     private List<FavItem> favItemList = new ArrayList<>();
     private RecyclerView recyclerViewFavList;
-    private FavDB favDB;
-    private FavouriteAdapter favAdapter;
+    //private FavDB favDB;
+    //private FavouriteAdapter favAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +38,7 @@ public class FavouriteScreen extends AppCompatActivity {
         profilescreen = findViewById(R.id.Profilescreen);
 
         // Initialize favDB
-        favDB = new FavDB(this); // Initialize the database object
+        //favDB = new FavDB(this); // Initialize the database object
 
 
         homescreen.setOnClickListener(new View.OnClickListener() {
@@ -67,11 +65,11 @@ public class FavouriteScreen extends AppCompatActivity {
         recyclerViewFavList.setHasFixedSize(true);
         recyclerViewFavList.setLayoutManager(new GridLayoutManager(this,2));
 
-        loadData();
+
 
     }
 
-    private void loadData() {
+    /*private void loadData() {
         if (favItemList != null) {
             favItemList.clear();
         }
@@ -81,7 +79,9 @@ public class FavouriteScreen extends AppCompatActivity {
                 while (cursor.moveToNext()) {
                     String title = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_TITLE));
                     String id = cursor.getString(cursor.getColumnIndex(FavDB.KEY_ID));
-                    int image = Integer.parseInt(cursor.getString(cursor.getColumnIndex(FavDB.ITEM_IMAGE)));
+                    String imageString = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_IMAGE));
+                    Log.d("FavouriteScreen", "Image string from DB: " + imageString);
+                    int image = Integer.parseInt(imageString);
                     FavItem favItem = new FavItem(title, id, image);
                     favItemList.add(favItem);
                 }
@@ -89,9 +89,8 @@ public class FavouriteScreen extends AppCompatActivity {
             if (cursor != null && cursor.isClosed())
                 cursor.close();
             database.close();
-        }
+        }*/
 
-        favAdapter = new FavouriteAdapter((ArrayList<FavItem>) favItemList, this);
-        recyclerViewFavList.setAdapter(favAdapter);
-    }
+
+
 }

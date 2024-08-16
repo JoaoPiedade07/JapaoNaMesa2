@@ -85,26 +85,7 @@ public class ProfileScreen extends AppCompatActivity {
             }
         });
 
-        //Achievements
 
-        recyclerViewAchievementsList = findViewById(R.id.AchievementsList);
-        recyclerViewAchievementsList.setHasFixedSize(true);
-        recyclerViewAchievementsList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
-        List<AchievementsModel> achievementsModels = new ArrayList<>() ;
-        achievementsModels.add(new AchievementsModel(R.drawable.ramen, "Cook 2 recepies"));
-        achievementsModels.add(new AchievementsModel(R.drawable.ramen, "Ramen"));
-        achievementsModels.add(new AchievementsModel(R.drawable.ramen, "Udon"));
-        achievementsModels.add(new AchievementsModel(R.drawable.ramen, "Soba"));
-        achievementsModels.add(new AchievementsModel(R.drawable.ramen, "Udon3"));
-        achievementsModels.add(new AchievementsModel(R.drawable.ramen, "Udon2"));
-        achievementsModels.add(new AchievementsModel(R.drawable.ramen, "Cook 10 recepies"));
-        achievementsModels.add(new AchievementsModel(R.drawable.ramen, "Cook 20 recepies"));
-        achievementsModels.add(new AchievementsModel(R.drawable.ramen, "Cook 35 recepies"));
-
-        AchievementsAdapter achievementsAdapter = new AchievementsAdapter(achievementsModels);
-
-        recyclerViewAchievementsList.setAdapter(achievementsAdapter);
 
     }
 }

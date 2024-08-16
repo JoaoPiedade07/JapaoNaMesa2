@@ -91,6 +91,7 @@ public class LogInScreen extends AppCompatActivity {
 
                                 if (task.isSuccessful()) {
                                     // Se o login for bem-sucedido, abre a tela principal
+                                    String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
                                     Intent intent = new Intent(getApplicationContext(), HomeScreen.class);
                                     startActivity(intent);
                                     finish();

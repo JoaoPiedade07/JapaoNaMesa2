@@ -66,9 +66,6 @@
             android:name=".Recepies.TemplateRecepies"
             android:exported="false" />
         <activity
-            android:name=".RecomendedScreen.RecomendedScreen"
-            android:exported="false" />
-        <activity
             android:name=".CategoryScreen.CategoryScreen"
             android:exported="false" />
         <activity

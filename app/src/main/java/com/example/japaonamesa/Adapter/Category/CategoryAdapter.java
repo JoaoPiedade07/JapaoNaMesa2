@@ -11,18 +11,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.japaonamesa.CategoryScreen.CategoryScreen;
 import com.example.japaonamesa.CategoryScreen.Gyosas.GyosasCategoryScreen;
-import com.example.japaonamesa.CategoryScreen.Ramen.RamenCategoryScreen;
 import com.example.japaonamesa.CategoryScreen.Rolls.RollsCategoryScreen;
 import com.example.japaonamesa.CategoryScreen.Soba.SobaCategoryScreen;
 import com.example.japaonamesa.CategoryScreen.Soups.SoupsCategoryScreen;
 import com.example.japaonamesa.CategoryScreen.Sushi.SushiCategoryScreen;
 import com.example.japaonamesa.CategoryScreen.Udon.UdonCategoryScreen;
-import com.example.japaonamesa.FavouriteScreen.FavouriteScreen;
 import com.example.japaonamesa.HomeScreen.HomeScreen;
 import com.example.japaonamesa.Model.Category.CategoryModel;
-import com.example.japaonamesa.ProfileScreen.ProfileScreen;
 import com.example.japaonamesa.R;
 
 import java.util.List;
@@ -61,9 +57,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                     case "Sushi":
                         intent = new Intent(context, SushiCategoryScreen.class);
                         break;
-                    case "Ramen":
-                        intent = new Intent(context, RamenCategoryScreen.class);
-                        break;
+                    //case "Ramen":
+                       // intent = new Intent(context, RamenCategoryScreen.class);
+                       // break;
 
                     case "Rolls":
                         intent = new Intent(context, RollsCategoryScreen.class);

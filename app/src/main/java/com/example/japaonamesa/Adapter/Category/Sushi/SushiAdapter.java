@@ -15,16 +15,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.japaonamesa.Adapter.Category.CategoryAdapter;
-import com.example.japaonamesa.Adapter.Fav.FavDB;
-import com.example.japaonamesa.Adapter.Recomended.RecomendedAdapter;
-import com.example.japaonamesa.CategoryScreen.CategoryScreen;
-import com.example.japaonamesa.FavouriteScreen.FavouriteScreen;
 import com.example.japaonamesa.HomeScreen.HomeScreen;
-import com.example.japaonamesa.Model.Category.CategoryModel;
 import com.example.japaonamesa.Model.Category.Sushi.SushiModel;
-import com.example.japaonamesa.Model.Recomended.RecomendedModel;
-import com.example.japaonamesa.ProfileScreen.ProfileScreen;
 import com.example.japaonamesa.R;
 import com.example.japaonamesa.Recepies.Sushi.NigirisScreen;
 import com.example.japaonamesa.Recepies.Sushi.SashimiScreen;
@@ -34,7 +26,7 @@ import java.util.List;
 public class SushiAdapter extends RecyclerView.Adapter<SushiAdapter.SushiViewHolder> {
     private List<SushiModel> sushiList;
     Context context;
-    private FavDB favDB;
+    //private FavDB favDB;
 
     public SushiAdapter(List<SushiModel> sushiList, Context context) {
         this.sushiList = sushiList;
@@ -44,22 +36,22 @@ public class SushiAdapter extends RecyclerView.Adapter<SushiAdapter.SushiViewHol
     @NonNull
     @Override
     public SushiAdapter.SushiViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        favDB = new FavDB(context);
+        //favDB = new FavDB(context);
         //create table on first
-        SharedPreferences prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
-        boolean firstStart = prefs.getBoolean("firstStart", true);
-        if (firstStart) {
-            createTableOnFirstStart();
-        }
+        //SharedPreferences prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        //boolean firstStart = prefs.getBoolean("firstStart", true);
+        //if (firstStart) {
+           // createTableOnFirstStart();
+        //}
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_holder_recomended, parent, false);
         return new SushiAdapter.SushiViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull SushiAdapter.SushiViewHolder holder, int position) {
-        final SushiModel sushiModel = sushiList.get(position);
+        //final SushiModel sushiModel = sushiList.get(position);
 
-        readCursorData(sushiModel, holder);
+        //readCursorData(sushiModel, holder);
         holder.sushiName.setText(sushiList.get(position).getSushiName());
         holder.sushiImage.setImageResource(sushiList.get(position).getSushiImage());
 
@@ -105,7 +97,7 @@ public class SushiAdapter extends RecyclerView.Adapter<SushiAdapter.SushiViewHol
             favBtnSushi = itemView.findViewById(R.id.favBtn);
 
             //add to fav btn
-            favBtnSushi.setOnClickListener(new View.OnClickListener() {
+            /*favBtnSushi.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int position = getAdapterPosition();
@@ -122,19 +114,19 @@ public class SushiAdapter extends RecyclerView.Adapter<SushiAdapter.SushiViewHol
                         favBtnSushi.setBackgroundResource(R.drawable.favourite_food_vector);
                     }
                 }
-            });
+            });*/
         }
 
     }
-    private void createTableOnFirstStart() {
+    /*private void createTableOnFirstStart() {
         favDB.insertEmpty();
 
         SharedPreferences prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putBoolean("firstStart", false);
         editor.apply();
-    }
-    private void readCursorData(SushiModel sushiModel, SushiAdapter.SushiViewHolder viewHolder) {
+    }*/
+    /*private void readCursorData(SushiModel sushiModel, SushiAdapter.SushiViewHolder viewHolder) {
         Cursor cursor = favDB.read_all_data(sushiModel.getKey_id());
         SQLiteDatabase database = favDB.getReadableDatabase();
         try {
@@ -150,9 +142,9 @@ public class SushiAdapter extends RecyclerView.Adapter<SushiAdapter.SushiViewHol
                 }
             }
         } finally {
-            if (cursor != null && cursor.isClosed())
+            if (cursor != null)
                 cursor.close();
             database.close();
-        }
+        }*/
     }
-}
+
