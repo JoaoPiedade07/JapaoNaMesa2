@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/applogo_foreground"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/applogo_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.JapaoNaMesa"
+        tools:targetApi="31">
+        <activity
+            android:name=".Recepies.Sushi.Nigiri.NigiriListItems"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryScreen.Udon.UdonCategoryScreen"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryScreen.Soups.SoupsCategoryScreen"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryScreen.Soba.SobaCategoryScreen"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryScreen.Rolls.RollsCategoryScreen"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryScreen.Ramen.RamenCategoryScreen"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryScreen.Gyosas.GyosasCategoryScreen"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryScreen.Sushi.SushiCategoryScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Recepies.Soba.YakiSobaScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Recepies.Gyosas.GyosasScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Recepies.Soups.MisoSoupScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Recepies.Sushi.NigirisScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Recepies.Sushi.SashimiScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Recepies.Udon.TempuraUdonScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Recepies.Ramen.TonkatsuRamenScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Recepies.Rolls.SpringRollsScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Recepies.TemplateRecepies"
+            android:exported="false" />
+        <activity
+            android:name=".RecomendedScreen.RecomendedScreen"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryScreen.CategoryScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileScreen.EditProfile.EditDescScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileScreen.EditProfile.EditUsernameScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileScreen.EditProfile.EditNameScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileScreen.EditProfile.EditProfileScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileScreen.Settings.SettingsScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileScreen.ProfileScreen"
+            android:exported="false" />
+        <activity
+            android:name=".FavouriteScreen.FavouriteScreen"
+            android:exported="false" />
+        <activity
+            android:name=".HomeScreen.HomeScreen"
+            android:exported="false" />
+        <activity
+            android:name=".SignAndLogIn.LogInScreen"
+            android:exported="false" />
+        <activity
+            android:name=".SignAndLogIn.SignInScreen"
+            android:exported="false" />
+        <activity
+            android:name=".WelcomeScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

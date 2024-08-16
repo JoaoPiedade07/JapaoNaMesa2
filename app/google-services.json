@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "31869432629",
+    "project_id": "japaonamesa-85807",
+    "storage_bucket": "japaonamesa-85807.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31869432629:android:192b598af3bc46bd20927c",
+        "android_client_info": {
+          "package_name": "com.example.japaonamesa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjNB8tvoEMLp8gbRJU3rd3ISA0l9fuRVs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
