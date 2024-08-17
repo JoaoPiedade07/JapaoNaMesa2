@@ -206,21 +206,15 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/help_vector" />
+                    android:src="@drawable/feedback_vector" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:layout_weight="1"
-                    android:text="Help"
+                    android:text="Feedback"
                     android:textSize="18sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:src="@drawable/arrow_forward_vector" />
 
             </LinearLayout>
 
@@ -249,11 +243,6 @@
                     android:text="About"
                     android:textSize="18sp" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:src="@drawable/arrow_forward_vector" />
 
             </LinearLayout>
 
@@ -282,11 +271,11 @@
                     android:text="Dark Mode"
                     android:textSize="18sp" />
 
-                <Switch
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <androidx.appcompat.widget.SwitchCompat
+                    android:layout_width="45dp"
+                    android:layout_height="25dp"
                     android:thumb="@drawable/thumb"
-                    android:track="@drawable/track"/>
+                    app:track="@drawable/track"/>
 
             </LinearLayout>
 

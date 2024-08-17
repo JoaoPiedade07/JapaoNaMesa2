@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.japaonamesa.SignAndLogIn.LogInScreen;
 import com.example.japaonamesa.SignAndLogIn.SignInScreen;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -31,7 +32,7 @@ import java.util.HashMap;
 
 public class WelcomeScreen extends AppCompatActivity {
 
-    Button LogInBtn;
+    Button SignInBtn, LogInBtn;
 
 
     @Override
@@ -39,13 +40,21 @@ public class WelcomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome_screen);
 
+        SignInBtn = findViewById(R.id.SignInBtn);
         LogInBtn = findViewById(R.id.LogInBtn);
 
-        //
-        LogInBtn.setOnClickListener(new View.OnClickListener() {
+        SignInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SignInScreen.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        LogInBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), LogInScreen.class);
                 startActivity(intent);
                 finish();
             }

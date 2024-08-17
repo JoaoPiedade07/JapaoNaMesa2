@@ -8,6 +8,16 @@
     tools:context=".SignAndLogIn.LogInScreen"
     android:background="@color/white">
 
+    <ImageView
+        android:id="@+id/backLogIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_back"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="8dp"
                 android:background="@android:drawable/editbox_background_normal"
                 android:drawableRight="@drawable/email_vector"
                 android:inputType="textPersonName"
@@ -58,7 +68,6 @@
                 android:layout_height="wrap_content"
                 android:text="Password"
                 android:textSize="17dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="4dp"
                 android:layout_gravity="start"/>
 
@@ -88,31 +97,8 @@
                 android:text="Log In"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
-                android:drawableRight="@drawable/arrow_login"
                 android:textSize="18sp"
                 app:cornerRadius="8dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Don't have an account?"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/txtGoSignIn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sign In"
-                    android:textSize="15dp"
-                    android:layout_marginStart="4dp"/>
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -143,8 +129,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign Up with Google"
-                android:textSize="16dp"
+                android:text="Log In with Google"
+                android:textSize="14dp"
                 android:layout_marginTop="10dp"/>
 
             <!-- LinearLayout horizontal para alinhar as imagens -->

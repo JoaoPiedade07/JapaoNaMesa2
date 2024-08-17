@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.japaonamesa.HomeScreen.HomeScreen;
 import com.example.japaonamesa.R;
+import com.example.japaonamesa.WelcomeScreen;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -29,7 +31,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LogInScreen extends AppCompatActivity {
 
     EditText editEmail, editPassword;
-    TextView goToSignIn;
+    ImageView goToWelcomeScreen;
     Button logInButtom;
     FirebaseAuth mAuth;
 
@@ -52,12 +54,13 @@ public class LogInScreen extends AppCompatActivity {
         editPassword = findViewById(R.id.LogPassword);
         logInButtom = findViewById(R.id.LogInButton);
         mAuth = FirebaseAuth.getInstance();
-        goToSignIn = findViewById(R.id.txtGoSignIn);
 
-        goToSignIn.setOnClickListener(new View.OnClickListener() {
+        goToWelcomeScreen = findViewById(R.id.backLogIn);
+
+        goToWelcomeScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SignInScreen.class);
+                Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
                 startActivity(intent);
                 finish();
             }

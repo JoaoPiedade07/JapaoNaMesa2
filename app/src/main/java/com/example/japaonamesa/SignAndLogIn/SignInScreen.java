@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.japaonamesa.FavouriteScreen.FavouriteScreen;
 import com.example.japaonamesa.HomeScreen.HomeScreen;
+import com.example.japaonamesa.ProfileScreen.ProfileScreen;
 import com.example.japaonamesa.R;
 import com.example.japaonamesa.WelcomeScreen;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -40,7 +41,7 @@ public class SignInScreen extends AppCompatActivity {
     TextView goToLogIn;
     Button signInButtom;
     EditText editEmail, editPassword;
-    ImageView googleBtn;
+    ImageView googleBtn, goToWelcomeScreen;
     FirebaseAuth firebaseAuth, mAuth;
     FirebaseDatabase firebaseDatabase;
     GoogleSignInOptions gso;
@@ -84,16 +85,17 @@ public class SignInScreen extends AppCompatActivity {
         editPassword = findViewById(R.id.Password);
         mAuth = FirebaseAuth.getInstance();
         signInButtom = findViewById(R.id.SignInButton);
-        goToLogIn = findViewById(R.id.txtGoLogIn);
+        goToWelcomeScreen = findViewById(R.id.backSignIn);
 
-        goToLogIn.setOnClickListener(new View.OnClickListener() {
+        goToWelcomeScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), LogInScreen.class);
+                Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
                 startActivity(intent);
                 finish();
             }
         });
+
 
         signInButtom.setOnClickListener(new View.OnClickListener() {
             @Override

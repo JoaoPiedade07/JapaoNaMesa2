@@ -16,6 +16,7 @@ import com.example.japaonamesa.ProfileScreen.ProfileScreen;
 import com.example.japaonamesa.R;
 import com.example.japaonamesa.SignAndLogIn.LogInScreen;
 import com.example.japaonamesa.SignAndLogIn.SignInScreen;
+import com.example.japaonamesa.WelcomeScreen;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SettingsScreen extends AppCompatActivity {
@@ -48,7 +49,7 @@ public class SettingsScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getApplicationContext(), LogInScreen.class));
+                startActivity(new Intent(getApplicationContext(), WelcomeScreen.class));
                 finish();
             }
         });
