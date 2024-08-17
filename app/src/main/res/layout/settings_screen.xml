@@ -22,31 +22,25 @@
         android:id="@+id/txtSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="10dp"
         android:text="Settings"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintStart_toEndOf="@+id/backProfileBtn"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/SettingsDivider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/light_grey"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/txtSettings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintTop_toBottomOf="@id/SettingsDivider"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSettings">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -59,8 +53,8 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:text="Your app"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:id="@+id/LayoutLanguage"
@@ -70,9 +64,9 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="10dp"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/txtApp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtApp">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -82,7 +76,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
+                    android:layout_marginStart="12dp"
                     android:layout_weight="1"
                     android:text="Language"
                     android:textSize="18sp" />
@@ -91,29 +85,35 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/LayoutFavourite"
+                android:id="@+id/LayoutApperance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="10dp"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/LayoutLanguage"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/LayoutLanguage">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/favourite_settings_vector" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/darkmode_vector" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
+                    android:layout_marginStart="12dp"
                     android:layout_weight="1"
-                    android:text="Favourites"
+                    android:text="Dark Mode"
                     android:textSize="18sp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:layout_width="45dp"
+                    android:layout_height="25dp"
+                    android:thumb="@drawable/thumb"
+                    app:track="@drawable/track" />
 
             </LinearLayout>
 
@@ -125,9 +125,9 @@
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="10dp"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/LayoutFavourite"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/LayoutApperance">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -137,7 +137,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
+                    android:layout_marginStart="12dp"
                     android:layout_weight="1"
                     android:text="Saved"
                     android:textSize="18sp" />
@@ -152,9 +152,9 @@
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="10dp"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/LayoutSaved"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/LayoutSaved">
 
                 <ImageView
                     android:layout_width="25dp"
@@ -164,32 +164,39 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
+                    android:layout_marginStart="12dp"
                     android:layout_weight="1"
                     android:text="Activity"
                     android:textSize="18sp" />
 
             </LinearLayout>
 
-            <View
-                android:id="@+id/InfoDivider"
+            <LinearLayout
+                android:id="@+id/LayoutPrivacyPolicy"
                 android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/light_grey"
-                app:layout_constraintTop_toBottomOf="@id/LayoutActivity"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/txtInfo"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="8dp"
-                android:text="More info"
-                app:layout_constraintTop_toBottomOf="@id/InfoDivider"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/LayoutActivity">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/privacypolicy_vector" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:text="Privacy Policy"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/LayoutHelp"
@@ -199,9 +206,9 @@
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="10dp"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/txtInfo"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/LayoutPrivacyPolicy">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -211,7 +218,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
+                    android:layout_marginStart="12dp"
                     android:layout_weight="1"
                     android:text="Feedback"
                     android:textSize="18sp" />
@@ -219,63 +226,30 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/LayoutAbout"
+                android:id="@+id/LayoutContact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="10dp"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/LayoutHelp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/LayoutHelp">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/about_vector" />
+                    android:src="@drawable/contact_vector" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
+                    android:layout_marginStart="12dp"
                     android:layout_weight="1"
-                    android:text="About"
+                    android:text="Contact"
                     android:textSize="18sp" />
 
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/LayoutApperance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginEnd="10dp"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/LayoutAbout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/darkmode_vector" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:layout_weight="1"
-                    android:text="Dark Mode"
-                    android:textSize="18sp" />
-
-                <androidx.appcompat.widget.SwitchCompat
-                    android:layout_width="45dp"
-                    android:layout_height="25dp"
-                    android:thumb="@drawable/thumb"
-                    app:track="@drawable/track"/>
 
             </LinearLayout>
 
@@ -285,32 +259,22 @@
                 android:layout_height="4dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/light_grey"
-                app:layout_constraintTop_toBottomOf="@id/LayoutApperance"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/txtLogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="8dp"
-                android:text="Login"
-                app:layout_constraintTop_toBottomOf="@id/Divider"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/LayoutContact" />
 
             <TextView
                 android:id="@+id/txtLogOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="14dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="20dp"
                 android:text="Logout"
                 android:textColor="@color/red"
                 android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@id/txtLogin"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Divider" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

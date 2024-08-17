@@ -3,6 +3,6 @@
     <translate
         android:fromXDelta="-100%"
         android:toXDelta="0%"
-        android:duration="400"
+        android:duration="350"
         android:interpolator="@android:interpolator/decelerate_quad"/>
 </set>
