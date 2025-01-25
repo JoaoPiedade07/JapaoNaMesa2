@@ -36,4 +36,4 @@ This app is an interactive guide to discovering the rich Japanese cuisine. Explo
 
 ### Contact
 
-Develop by João Piedade, email: joaoluislopespiedade07@gmail.com
+Developed by João Piedade, email: joaoluislopespiedade07@gmail.com
