@@ -4,10 +4,10 @@ public class RecomendedModel {
 
     private int recomendedImage;
     private String recomendedName;
-    private String key_id;
-    private String favStatus;
+    private int key_id;
+    private int favStatus;
 
-    public RecomendedModel(int image, String name, String key_id, String favStatus) {
+    public RecomendedModel(int image, String name, int key_id, int favStatus) {
         this.recomendedImage = image;
         this.recomendedName = name;
         this.key_id = key_id;
@@ -22,13 +22,13 @@ public class RecomendedModel {
     public String getName() {
         return recomendedName;
     }
-    public String getKey_id() {
+    public int getKey_id() {
         return key_id;
     }
-    public String getFavStatus() {
+    public int getFavStatus() {
         return favStatus;
     }
-    public void setFavStatus(String favStatus) {
+    public void setFavStatus(int favStatus) {
         this.favStatus = favStatus;
     }
 

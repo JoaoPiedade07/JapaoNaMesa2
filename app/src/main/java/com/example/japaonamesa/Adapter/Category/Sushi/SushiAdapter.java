@@ -41,7 +41,7 @@ public class SushiAdapter extends RecyclerView.Adapter<SushiAdapter.SushiViewHol
         //SharedPreferences prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
         //boolean firstStart = prefs.getBoolean("firstStart", true);
         //if (firstStart) {
-           // createTableOnFirstStart();
+        // createTableOnFirstStart();
         //}
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_holder_recomended, parent, false);
         return new SushiAdapter.SushiViewHolder(view);
@@ -80,14 +80,15 @@ public class SushiAdapter extends RecyclerView.Adapter<SushiAdapter.SushiViewHol
     }
 
     @Override
-    public int getItemCount() { return sushiList.size();
+    public int getItemCount() {
+        return sushiList.size();
     }
 
     public class SushiViewHolder extends RecyclerView.ViewHolder {
 
         private TextView sushiName;
-        private ImageView sushiImage;
-        private Button favBtnSushi;
+        private ImageView sushiImage, favBtnSushi;
+
         public SushiViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -95,56 +96,6 @@ public class SushiAdapter extends RecyclerView.Adapter<SushiAdapter.SushiViewHol
             sushiImage = itemView.findViewById(R.id.recomendedImage);
 
             favBtnSushi = itemView.findViewById(R.id.favBtn);
-
-            //add to fav btn
-            /*favBtnSushi.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    SushiModel sushiModel = sushiList.get(position);
-
-                    if (sushiModel.getFavStatus().equals("0")) {
-                        sushiModel.setFavStatus("1");
-                        favDB.insertIntoTheDatabase(sushiModel.getSushiName(), sushiModel.getSushiImage(),
-                                sushiModel.getKey_id(), sushiModel.getFavStatus());
-                        favBtnSushi.setBackgroundResource(R.drawable.red_favorite_vector);
-                    } else {
-                        sushiModel.setFavStatus("0");
-                        favDB.remove_fav(sushiModel.getKey_id());
-                        favBtnSushi.setBackgroundResource(R.drawable.favourite_food_vector);
-                    }
-                }
-            });*/
         }
-
     }
-    /*private void createTableOnFirstStart() {
-        favDB.insertEmpty();
-
-        SharedPreferences prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putBoolean("firstStart", false);
-        editor.apply();
-    }*/
-    /*private void readCursorData(SushiModel sushiModel, SushiAdapter.SushiViewHolder viewHolder) {
-        Cursor cursor = favDB.read_all_data(sushiModel.getKey_id());
-        SQLiteDatabase database = favDB.getReadableDatabase();
-        try {
-            while (cursor.moveToNext()) {
-                String item_fav_status = cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS));
-                sushiModel.setFavStatus(item_fav_status);
-
-                //check fav status
-                if (item_fav_status != null && item_fav_status.equals("1")) {
-                    viewHolder.favBtnSushi.setBackgroundResource(R.drawable.red_favorite_vector);
-                } else if (item_fav_status != null && item_fav_status.equals("0")) {
-                    viewHolder.favBtnSushi.setBackgroundResource(R.drawable.favourite_food_vector);
-                }
-            }
-        } finally {
-            if (cursor != null)
-                cursor.close();
-            database.close();
-        }*/
-    }
-
+}

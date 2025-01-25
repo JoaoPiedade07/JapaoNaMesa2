@@ -19,6 +19,7 @@ import com.example.japaonamesa.Adapter.Category.CategoryAdapter;
 
 import com.example.japaonamesa.Adapter.Recomended.RecomendedAdapter;
 import com.example.japaonamesa.CategoryScreen.CategoryScreen;
+import com.example.japaonamesa.FavouriteScreen.FavDB.FavDB;
 import com.example.japaonamesa.FavouriteScreen.FavouriteScreen;
 import com.example.japaonamesa.Model.Category.CategoryModel;
 import com.example.japaonamesa.Model.Recomended.RecomendedModel;
@@ -39,12 +40,16 @@ public class HomeScreen extends AppCompatActivity {
     private RecyclerView recyclerViewCategoryList, recyclerViewRecomendList;
     private ArrayList<RecomendedModel> recomendedModels = new ArrayList<>();
     Spinner spinnerLocation;
+    private RecomendedAdapter recomendedAdapter;
+    private FavDB favDB;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_screen);
+
+        favDB = new FavDB(this);
 
         //NavBar
         homescreen = findViewById(R.id.homeScreen);
@@ -106,13 +111,13 @@ public class HomeScreen extends AppCompatActivity {
         recyclerViewRecomendList.setHasFixedSize(true);
         recyclerViewRecomendList.setLayoutManager(new NonScrollingGridLayoutManager(this, 2));
 
-        recomendedModels.add(new RecomendedModel(R.drawable.rollspng, "Spring Rolls", "16", "0"));
-        recomendedModels.add(new RecomendedModel(R.drawable.misopng, "Miso Soup", "17", "0"));
-        recomendedModels.add(new RecomendedModel(R.drawable.gyosapng, "Gyosas", "18", "0"));
-        recomendedModels.add(new RecomendedModel(R.drawable.tunasahimipng, "Tuna Sashimi", "7", "0"));
+        recomendedModels.add(new RecomendedModel(R.drawable.rollspng, "Spring Rolls", 16, 0));
+        recomendedModels.add(new RecomendedModel(R.drawable.misopng, "Miso Soup", 17, 0));
+        recomendedModels.add(new RecomendedModel(R.drawable.gyosapng, "Gyosas", 18, 0));
+        recomendedModels.add(new RecomendedModel(R.drawable.tunasahimipng, "Tuna Sashimi", 7, 0));
 
 
-        RecomendedAdapter recomendedAdapter = new RecomendedAdapter(recomendedModels, this);
+        recomendedAdapter = new RecomendedAdapter(recomendedModels, this);  // Instanciar o adaptador
         recyclerViewRecomendList.setAdapter(recomendedAdapter);
 
         //SpinnerLocation
@@ -122,6 +127,18 @@ public class HomeScreen extends AppCompatActivity {
         adapter.setDropDownViewResource(R.layout.spinner_item);
         spinnerLocation.setAdapter(adapter);
 
+    }
+    // Método para atualizar a lista de recomendados quando necessário
+    public void updateRecomendedList() {
+        if (recomendedAdapter != null) {
+            recomendedAdapter.notifyDataSetChanged();  // Notifica o adaptador que a lista foi alterada
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateRecomendedList();  // Atualiza a lista quando a Activity for retomada
     }
 }
 

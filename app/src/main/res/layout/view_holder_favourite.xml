@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="170dp"
-    android:layout_height="210dp"
+    android:layout_width="220dp"
+    android:layout_height="230dp"
     android:layout_marginStart="10dp"
     android:layout_marginBottom="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="10dp"
     android:background="@drawable/category_template">
 
-    <androidx.appcompat.widget.AppCompatButton
+    <ImageView
         android:id="@+id/RemovefavBtn"
         android:layout_width="25dp"
         android:layout_height="25dp"
@@ -22,8 +22,8 @@
 
     <ImageView
         android:id="@+id/favoriteImage"
-        android:layout_width="125dp"
-        android:layout_height="120dp"
+        android:layout_width="145dp"
+        android:layout_height="140dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RemovefavBtn"
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:text="Sushi"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/favoriteImage" />

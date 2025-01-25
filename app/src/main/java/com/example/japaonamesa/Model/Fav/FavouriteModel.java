@@ -1,27 +1,46 @@
 package com.example.japaonamesa.Model.Fav;
 
 public class FavouriteModel {
+    private int id;          // Identificador único para o item
+    private String title;    // Título do item favorito
+    private int image;       // Referência ao recurso de imagem (R.drawable)
 
-    private Integer imageFav;
-    private String textFav;
-
-
-    public FavouriteModel(Integer imageFav, String textFav) {
-        this.imageFav = imageFav;
-        this.textFav = textFav;
+    // Construtor vazio (necessário para algumas bibliotecas, como Firebase)
+    public FavouriteModel() {
     }
 
-    public void setImageFav(Integer imageFav) {
-        this.imageFav = imageFav;
+    // Construtor com parâmetros
+    public FavouriteModel(int id, String title, int image) {
+        this.id = id;
+        this.title = title;
+        this.image = image;
     }
 
-    public void setTextFav(String textFav) {
-        this.textFav = textFav;
+    // Getter e Setter para o ID
+    public int getId() {
+        return id;
     }
 
-    public Integer getImageFav() { return imageFav;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getTextFav() { return textFav;
+    // Getter e Setter para o título
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    // Getter e Setter para a imagem
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 }
+

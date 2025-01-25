@@ -1,26 +1,41 @@
 package com.example.japaonamesa.FavouriteScreen.FavDB;
 
 public class FavItem {
+    private int id;
+    private String title;
+    private int image;
 
-    private String favName;
-    private String key_id;
-    private int favImage;
-
-    public FavItem(String favName, String key_id, int favImage) {
-        this.favName = favName;
-        this.key_id = key_id;
-        this.favImage = favImage;
+    // Construtor
+    public FavItem(int id, String title, int image) {
+        this.id = id;
+        this.title = title;
+        this.image = image;
     }
 
-    public String getFavName() {
-        return favName;
+    // Getter para 'id'
+    public int getId() {
+        return id;
     }
 
-    public String getKey_id() {
-        return key_id;
+    // Setter para 'id' (opcional, caso precise alterar o valor depois)
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getFavImage() {
-        return favImage;
+    // Getters e Setters para os outros campos
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 }

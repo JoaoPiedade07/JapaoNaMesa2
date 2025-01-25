@@ -136,11 +136,11 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/light_grey"
         app:cardCornerRadius="12dp"
         app:cardElevation="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="12dp"
         android:layout_marginHorizontal="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -181,7 +181,6 @@
                 android:padding="16dp">
 
                 <ImageView
-
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/home_vector" />

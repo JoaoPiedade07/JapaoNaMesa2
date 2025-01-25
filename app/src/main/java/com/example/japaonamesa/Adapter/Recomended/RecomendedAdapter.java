@@ -10,10 +10,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.japaonamesa.FavouriteScreen.FavDB.FavDB;
 import com.example.japaonamesa.Model.Recomended.RecomendedModel;
 import com.example.japaonamesa.R;
 
@@ -21,51 +23,62 @@ import java.util.List;
 
 public class RecomendedAdapter extends RecyclerView.Adapter<RecomendedAdapter.RecomendedViewHolder> {
 
-    private List<RecomendedModel> recomendedList;
-
+    private List<RecomendedModel> recomendedModels;
     Context context;
-    
+    private FavDB favDB;
 
-
-
-    public RecomendedAdapter(List<RecomendedModel> recomendedList, Context context){
-        this.recomendedList = recomendedList;
+    public RecomendedAdapter(List<RecomendedModel> recomendedModels, Context context){
+        this.recomendedModels = recomendedModels;
         this.context = context;
+        favDB = new FavDB(context); // Instancia o banco de dados
     }
     @NonNull
     @Override
     public RecomendedViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //favDB = new FavDB(context);
-        //create table on first
-        //SharedPreferences prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
-        //boolean firstStart = prefs.getBoolean("firstStart", true);
-        //if (firstStart) {
-           // createTableOnFirstStart();
-        //}
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_holder_recomended, parent, false);
         return new RecomendedViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecomendedAdapter.RecomendedViewHolder holder, int position) {
-        //final RecomendedModel recomendedModel = recomendedList.get(position);
+        RecomendedModel item = recomendedModels.get(position);
 
-        //readCursorData(recomendedModel, holder);
-        holder.recomendedName.setText(recomendedList.get(position).getName());
-        holder.recomendedImage.setImageResource(recomendedList.get(position).getImage());
+        holder.recomendedName.setText(item.getName());
+        holder.recomendedImage.setImageResource(item.getImage());
+
+        // Verifica se o item está favoritado e altera o ícone do favorito
+        if (item.getFavStatus() == 1) {
+            holder.favBtn.setImageResource(R.drawable.favourite_food_vector_red); // Ícone quando favorito
+        } else {
+            holder.favBtn.setImageResource(R.drawable.favourite_food_vector); // Ícone quando não favorito
+        }
+
+        // Ao clicar no ícone de favorito, muda o status de favorito
+        holder.favBtn.setOnClickListener(v -> {
+            if (item.getFavStatus() == 1) {
+                favDB.removeFavorite(item.getKey_id());
+                item.setFavStatus(0); // Atualiza o status para não favorito
+                holder.favBtn.setImageResource(R.drawable.favourite_food_vector);
+            } else {
+                favDB.addFavorite(item.getKey_id(), item.getName(), String.valueOf(item.getImage()));
+                item.setFavStatus(1); // Atualiza o status para favorito
+                holder.favBtn.setImageResource(R.drawable.favourite_food_vector_red);
+            }
+        });
 
     }
 
     @Override
     public int getItemCount() {
-        return recomendedList.size();
+        return recomendedModels.size();
     }
 
     public class RecomendedViewHolder extends RecyclerView.ViewHolder {
 
         private TextView recomendedName;
         private ImageView recomendedImage;
-        private Button favBtn;
+        private ImageView favBtn;
+
         public RecomendedViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -73,57 +86,6 @@ public class RecomendedAdapter extends RecyclerView.Adapter<RecomendedAdapter.Re
             recomendedImage = itemView.findViewById(R.id.recomendedImage);
 
             favBtn = itemView.findViewById(R.id.favBtn);
-
-            //add to fav btn
-            /*favBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    RecomendedModel recomendedModel = recomendedList.get(position);
-
-                    if (recomendedModel.getFavStatus().equals("0")) {
-                        recomendedModel.setFavStatus("1");
-                        favDB.insertIntoTheDatabase(recomendedModel.getName(), recomendedModel.getImage(),
-                                recomendedModel.getKey_id(), recomendedModel.getFavStatus());
-                        favBtn.setBackgroundResource(R.drawable.red_favorite_vector);
-                    } else {
-                        recomendedModel.setFavStatus("0");
-                        favDB.remove_fav(recomendedModel.getKey_id());
-                        favBtn.setBackgroundResource(R.drawable.favourite_food_vector);
-                    }
-                }
-            });*/
-
         }
     }
-
-    /*private void createTableOnFirstStart() {
-        favDB.insertEmpty();
-
-        SharedPreferences prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putBoolean("firstStart", false);
-        editor.apply();
-    }*/
-    /*private void readCursorData(RecomendedModel recomendedModel, RecomendedAdapter.RecomendedViewHolder viewHolder) {
-        Cursor cursor = favDB.read_all_data(recomendedModel.getKey_id());
-        SQLiteDatabase database = favDB.getReadableDatabase();
-        try {
-            while (cursor.moveToNext()) {
-                String item_fav_status = cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS));
-                recomendedModel.setFavStatus(item_fav_status);
-
-                //check fav status
-                if (item_fav_status != null && item_fav_status.equals("1")) {
-                    viewHolder.favBtn.setBackgroundResource(R.drawable.red_favorite_vector);
-                } else if (item_fav_status != null && item_fav_status.equals("0")) {
-                    viewHolder.favBtn.setBackgroundResource(R.drawable.favourite_food_vector);
-                }
-            }
-        } finally {
-            if (cursor != null)
-                cursor.close();
-            database.close();
-        }*/
-
 }
