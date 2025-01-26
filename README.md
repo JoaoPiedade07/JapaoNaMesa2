@@ -8,6 +8,10 @@ Esta aplicação é um guia interativo para descobrir a rica culinária japonesa
 - 🌍 Histórias e origens de pratos famosos.
 - 🍱 Dicas de ingredientes e substituições.
 
+![image.png](attachment:379f6527-70ea-4cd7-ad18-9415942e781b:image.png)
+
+![image.png](attachment:326cf254-209b-4a3d-8a20-d9d7611ea92d:image.png)
+
 ### Tecnologias Utilizadas
 
 - Frontend: XML, Java
@@ -36,4 +40,4 @@ This app is an interactive guide to discovering the rich Japanese cuisine. Explo
 
 ### Contact
 
-Developed by João Piedade, email: joaoluislopespiedade07@gmail.com
+Desenvolved by João Piedade, email: joaoluislopespiedade07@gmail.com
