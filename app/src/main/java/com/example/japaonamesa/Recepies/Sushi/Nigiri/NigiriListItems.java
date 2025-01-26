@@ -8,30 +8,31 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.japaonamesa.HomeScreen.HomeScreen;
+
 import com.example.japaonamesa.R;
 import com.example.japaonamesa.Recepies.Sushi.NigirisScreen;
 
 public class NigiriListItems extends AppCompatActivity {
     CheckBox checkBoxSushiRice, checkBoxFish, checkBoxWasabi, checkBoxSoySauce, checkBoxNori;
+    ViewFlipper viewFlipper; // Adicionando o ViewFlipper
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nigiri_list_items);
 
+        // Inicializar o ViewFlipper
+        viewFlipper = findViewById(R.id.viewFlipper);
+
         checkBoxSushiRice = findViewById(R.id.checkBoxSushiRice);
         checkBoxFish = findViewById(R.id.checkBoxFish);
         checkBoxWasabi = findViewById(R.id.checkBoxWasabi);
         checkBoxSoySauce = findViewById(R.id.checkBoxSoySauce);
-        checkBoxNori = findViewById(R.id.checkBoxNori);// Substitua com o ID da sua checkbox
+        checkBoxNori = findViewById(R.id.checkBoxNori);
 
         checkBoxSushiRice.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -88,12 +89,30 @@ public class NigiriListItems extends AppCompatActivity {
             }
         });
 
+        // Configurando o botão para alternar para a próxima tela no ViewFlipper
+        Button nextButton = findViewById(R.id.nextButton);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewFlipper.showNext(); // Mostra a próxima tela
+            }
+        });
+
+        // Configurando o botão para alternar para a tela anterior no ViewFlipper
+        Button previousButton = findViewById(R.id.previousButton);
+        previousButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewFlipper.showPrevious(); // Mostra a tela anterior
+            }
+        });
+
         ImageView backToNigiriScreen = findViewById(R.id.backToNigiriScreen);
 
         backToNigiriScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(getApplicationContext(), NigirisScreen.class);
+                Intent intent = new Intent(getApplicationContext(), NigirisScreen.class);
                 startActivity(intent);
                 finish();
             }

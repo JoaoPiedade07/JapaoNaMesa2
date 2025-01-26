@@ -1,557 +1,337 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recepies.Sushi.Nigiri.NigiriListItems"
-    android:background="@color/white">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="16dp">
 
+    <!-- Botão para voltar para a tela de NigiriScreen -->
     <ImageView
         android:id="@+id/backToNigiriScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/arrow_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/arrow_back" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/nigiripng" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_horizontal"
+        android:paddingBottom="16dp"
+        android:text="Salmon nigiri"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <View
         android:id="@+id/dividerNigiriImg"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/light_grey"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/backToNigiriScreen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="2dp"
+        android:layout_below="@+id/textView4"
+        android:background="@color/light_grey" />
 
-    <ScrollView
+    <!-- ViewFlipper que alterna entre as telas -->
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:scrollbars="none"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dividerNigiriImg">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/dividerNigiriImg">
 
+        <!-- Primeira Tela: Ingredientes -->
         <LinearLayout
-            android:id="@+id/listNigiri"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="10dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dividerList">
-
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="200dp"
-                android:layout_height="190dp"
-                android:src="@drawable/nigiripng"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_gravity="center"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/backToNigiriScreen" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Nigiri"
-                android:textSize="35sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="8dp"
-                android:text="Shopping list: "
-                android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-            <View
-                android:id="@+id/dividerList"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/light_grey"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView5" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <CheckBox
-                    android:id="@+id/checkBoxSushiRice"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:text="Sushi rice"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• Short-grain Japanese rice\n• Rice vinegar\n• Sugar\n• Salt"
-                    android:textSize="20sp"
-                    android:paddingStart="12dp"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <CheckBox
-                    android:id="@+id/checkBoxFish"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:text="Fish"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• Fresh, high-quality fish like tuna (maguro), salmon (sake), or shrimp (ebi)\n• Optional toppings: tamago (sweet omelet), eel (unagi), or avocado"
-                    android:textSize="20sp"
-                    android:paddingStart="12dp"/>
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <CheckBox
-                    android:id="@+id/checkBoxWasabi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:text="Wasabi (optional)"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• A small amount of wasabi paste to place between the rice and fish (optional)"
-                    android:textSize="20sp"
-                    android:paddingStart="12dp"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <CheckBox
-                    android:id="@+id/checkBoxSoySauce"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:text="Soy Sauce"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• For dipping the nigiri"
-                    android:textSize="20sp"
-                    android:paddingStart="12dp"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <CheckBox
-                    android:id="@+id/checkBoxNori"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:text="Nori"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• Small strips of nori (seaweed) to wrap around certain types of nigiri, like tamago or unagi\n"
-                    android:textSize="20sp"
-                    android:paddingStart="12dp"/>
-
-
-            </LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="8dp"
-                android:text="Tools: "
-                android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <View
-                android:id="@+id/dividerTools"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/light_grey"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:text="Shopping list:"
+                android:textSize="20sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <CheckBox
-                    android:id="@+id/checkBoxTool1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:text="Sharp Knife"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• For slicing the fish into thin pieces"
-                    android:textSize="20sp"
-                    android:paddingStart="12dp"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <CheckBox
-                    android:id="@+id/checkBoxTool2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:text="Bamboo Sushi Mat (optional)"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• While not necessary for nigiri, it's useful if you're making other types of sushi."
-                    android:textSize="20sp"
-                    android:paddingStart="12dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <CheckBox
-                    android:id="@+id/checkBoxTool3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:text="Rice Paddle"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• For mixing the sushi rice with vinegar"
-                    android:textSize="20sp"
-                    android:paddingStart="12dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <CheckBox
-                    android:id="@+id/checkBoxTool4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:text="Bowl of Water"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• To wet your hands while shaping the rice to prevent sticking\n"
-                    android:textSize="20sp"
-                    android:paddingStart="12dp"/>
-
-            </LinearLayout>
-
-            <TextView
+            <!-- Checkboxes -->
+            <CheckBox
+                android:id="@+id/checkBoxSushiRice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="8dp"
-                android:text="Basic Steps: "
-                android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:text="Arroz de Sushi"
+                android:textSize="20sp" />
 
-            <View
-                android:id="@+id/dividerSteps"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/light_grey"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:layout_height="wrap_content"
+                android:text="• Short-grain Japanese rice\n• Rice vinegar\n• Sugar\n• Salt"
+                android:textSize="18sp"
+                android:paddingStart="12dp"/>
 
-            <LinearLayout
+            <CheckBox
+                android:id="@+id/checkBoxFish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Peixe"
+                android:textSize="20sp" />
+
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:text="• Fresh, high-quality fish like tuna (maguro), salmon (sake), or shrimp (ebi)\n• Optional toppings: tamago (sweet omelet), eel (unagi), or avocado"
+                android:textSize="18sp"
+                android:paddingStart="12dp"/>
 
-                <CheckBox
-                    android:id="@+id/checkStep1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:text="Prepare the Sushi Rice"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
+            <CheckBox
+                android:id="@+id/checkBoxWasabi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wasabi"
+                android:textSize="20sp" />
 
-
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:text="• A small amount of wasabi paste to place between the rice and fish (optional)"
+                android:textSize="18sp"
+                android:paddingStart="12dp"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• Cook the short-grain rice, then mix it with a blend of rice vinegar, sugar, and salt."
-                    android:textSize="20sp"
-                    android:paddingStart="12dp"/>
+            <CheckBox
+                android:id="@+id/checkBoxSoySauce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Molho de Soja"
+                android:textSize="20sp" />
 
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:text="• For dipping the nigiri"
+                android:textSize="18sp"
+                android:paddingStart="12dp"/>
 
-                <CheckBox
-                    android:id="@+id/checkStep2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:text="Prepare the Fish"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
+            <CheckBox
+                android:id="@+id/checkBoxNori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nori"
+                android:textSize="20sp" />
 
-
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• Slice the fish into thin pieces, about 2-3 inches long and 1 inch wide."
-                    android:textSize="20sp"
-                    android:paddingStart="12dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <CheckBox
-                    android:id="@+id/checkStep3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:text="Shape the Rice"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• Wet your hands with water, take a small amount of rice (about a tablespoon), and shape it into an oval mound."
-                    android:textSize="20sp"
-                    android:paddingStart="12dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <CheckBox
-                    android:id="@+id/checkStep4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:text="Assemble the Nigiri"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• Place a small dab of wasabi on the rice (optional).\n• Press the fish slice gently onto the rice."
-                    android:textSize="20sp"
-                    android:paddingStart="12dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <CheckBox
-                    android:id="@+id/checkStep5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:text="Serve"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• Arrange the nigiri on a plate, serve with soy sauce, and enjoy.\n"
-                    android:textSize="20sp"
-                    android:paddingStart="12dp"/>
-
-            </LinearLayout>
-
+                android:layout_height="wrap_content"
+                android:text="• Small strips of nori (seaweed) to wrap around certain types of nigiri, like tamago or unagi\n"
+                android:textSize="18sp"
+                android:paddingStart="12dp"/>
 
         </LinearLayout>
 
-    </ScrollView>
+        <!-- Segunda Tela: Tools -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Tools:"
+                android:textSize="20sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxTool1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sharp Knife"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• For slicing the fish into thin pieces"
+                android:textSize="18sp"
+                android:paddingStart="12dp"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxTool2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bamboo Sushi Mat (optional)"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• While not necessary for nigiri, it's useful if you're making other types of sushi."
+                android:textSize="18sp"
+                android:paddingStart="12dp"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxTool3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rice Paddle"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• For mixing the sushi rice with vinegar"
+                android:textSize="18sp"
+                android:paddingStart="12dp"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxTool4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bowl of Water"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• To wet your hands while shaping the rice to prevent sticking\n"
+                android:textSize="20sp"
+                android:paddingStart="12dp"/>
+
+        </LinearLayout>
+        <!-- Terceira Tela: Receita -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Basic steps:"
+                android:textSize="20sp" />
+
+            <CheckBox
+                android:id="@+id/checkStep1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prepare the Sushi Rice"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Cook the short-grain rice, then mix it with a blend of rice vinegar, sugar, and salt."
+                android:textSize="20sp"
+                android:paddingStart="12dp"/>
+
+            <CheckBox
+                android:id="@+id/checkStep2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prepare the Fish"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Slice the fish into thin pieces, about 2-3 inches long and 1 inch wide."
+                android:textSize="20sp"
+                android:paddingStart="12dp"/>
+
+            <CheckBox
+                android:id="@+id/checkStep3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shape the Rice"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Wet your hands with water, take a small amount of rice (about a tablespoon), and shape it into an oval mound."
+                android:textSize="20sp"
+                android:paddingStart="12dp"/>
+
+            <CheckBox
+                android:id="@+id/checkStep4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Assemble the Nigiri"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Place a small dab of wasabi on the rice (optional).\n• Press the fish slice gently onto the rice."
+                android:textSize="20sp"
+                android:paddingStart="12dp"/>
+
+            <CheckBox
+                android:id="@+id/checkStep5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Serve"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Arrange the nigiri on a plate, serve with soy sauce, and enjoy.\n"
+                android:textSize="20sp"
+                android:paddingStart="12dp"/>
+
+        </LinearLayout>
+
+    </ViewFlipper>
+
+    <!-- Botões de navegação para o ViewFlipper -->
+    <LinearLayout
+        android:id="@+id/navigationButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/previousButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/blue"
+            android:text="Anterior"
+            android:textSize="18sp"
+            app:cornerRadius="10dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/blue"
+            android:text="Próximo"
+            android:textSize="18sp"
+            app:cornerRadius="10dp"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
