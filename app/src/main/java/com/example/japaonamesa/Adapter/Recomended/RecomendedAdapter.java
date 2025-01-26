@@ -1,23 +1,22 @@
 package com.example.japaonamesa.Adapter.Recomended;
 
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.japaonamesa.FavouriteScreen.FavDB.FavDB;
+import com.example.japaonamesa.HomeScreen.HomeScreen;
 import com.example.japaonamesa.Model.Recomended.RecomendedModel;
 import com.example.japaonamesa.R;
+import com.example.japaonamesa.Recepies.Gyosas.GyosasScreen;
+import com.example.japaonamesa.Recepies.Rolls.SpringRollsScreen;
+import com.example.japaonamesa.Recepies.Soups.MisoSoupScreen;
+import com.example.japaonamesa.Recepies.Sushi.Sashimi.TunaSashimiScreen;
 
 import java.util.List;
 
@@ -45,6 +44,35 @@ public class RecomendedAdapter extends RecyclerView.Adapter<RecomendedAdapter.Re
 
         holder.recomendedName.setText(item.getName());
         holder.recomendedImage.setImageResource(item.getImage());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent;
+
+                String itemName = recomendedModels.get(position).getName();
+
+                switch (itemName) {
+                    case "Spring Rolls":
+                        intent = new Intent(context, SpringRollsScreen.class);
+                        break;
+                    case "Miso Soup":
+                        intent = new Intent(context, MisoSoupScreen.class);
+                        break;
+                    case "Gyosas":
+                        intent = new Intent(context, GyosasScreen.class);
+                        break;
+                    case "Tuna Sashimi":
+                        intent = new Intent(context, TunaSashimiScreen.class);
+                        break;
+
+                    default:
+                        intent = new Intent(context, HomeScreen.class);
+                        break;
+                }
+                context.startActivity(intent);
+            }
+        });
 
         // Verifica se o item está favoritado e altera o ícone do favorito
         if (item.getFavStatus() == 1) {

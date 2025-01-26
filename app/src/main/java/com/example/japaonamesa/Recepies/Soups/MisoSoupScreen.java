@@ -24,7 +24,7 @@ public class MisoSoupScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.miso_soup_screen);
 
-        backCategoryMisoSoup = findViewById(R.id.BackCategoryMisoSoup);
+        backCategoryMisoSoup = findViewById(R.id.BackCategorySoup);
 
         backCategoryMisoSoup.setOnClickListener(new View.OnClickListener() {
             @Override

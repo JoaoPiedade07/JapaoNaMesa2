@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/applogo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JapaoNaMesa"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+        <activity
+            android:name=".Recepies.Sushi.Sashimi.TunaSashimiScreen"
+            android:exported="false" />
         <activity
             android:name=".Recepies.Sushi.Nigiri.NigiriListItems"
             android:exported="false" />
@@ -51,7 +54,7 @@
             android:name=".Recepies.Sushi.NigirisScreen"
             android:exported="false" />
         <activity
-            android:name=".Recepies.Sushi.SashimiScreen"
+            android:name=".Recepies.Sushi.Sashimi.SashimiScreen"
             android:exported="false" />
         <activity
             android:name=".Recepies.Udon.TempuraUdonScreen"
@@ -100,7 +103,7 @@
             android:exported="false" />
         <activity
             android:name=".WelcomeScreen"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

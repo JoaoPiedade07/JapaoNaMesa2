@@ -9,7 +9,7 @@
     android:background="@color/white">
 
     <ImageView
-        android:id="@+id/BackCategoryMisoSoup"
+        android:id="@+id/BackCategorySoup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -18,21 +18,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/dividerMisoImg"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_grey"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/BackCategorySoup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/misopng"
-        app:layout_constraintTop_toBottomOf="@+id/BackCategoryMisoSoup" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dividerMisoImg" />
 
     <ImageView
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="10dp"
         android:src="@drawable/favourite_food_vector"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -42,19 +54,34 @@
         android:layout_marginTop="20dp"
         android:text="Miso Soup"
         android:textColor="@color/black"
-        android:textSize="40dp"
+        android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_text"
-        android:textSize="30dp"
+        android:text="@string/nigiri"
+        android:textSize="28sp"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/btnListMiso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/blue"
+        android:gravity="center"
+        android:text="Start recepie"
+        android:textSize="25sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
