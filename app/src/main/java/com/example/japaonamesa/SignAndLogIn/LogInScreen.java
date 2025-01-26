@@ -7,21 +7,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 import com.example.japaonamesa.HomeScreen.HomeScreen;
 import com.example.japaonamesa.R;
 import com.example.japaonamesa.WelcomeScreen;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -31,9 +26,13 @@ import com.google.firebase.auth.FirebaseUser;
 public class LogInScreen extends AppCompatActivity {
 
     EditText editEmail, editPassword;
-    ImageView goToWelcomeScreen;
+    ImageView goToWelcomeScreen, googleBtn;
     Button logInButtom;
     FirebaseAuth mAuth;
+    GoogleSignInOptions gso;
+    GoogleSignInClient gsc;
+
+    int RC_LOG_IN = 20;
 
     public void onStart() {
         super.onStart();
@@ -49,6 +48,20 @@ public class LogInScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.log_in_screen);
+
+        googleBtn = findViewById(R.id.GoogleBtn);
+
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail().build();
+
+        gsc = GoogleSignIn.getClient(LogInScreen.this,gso);
+
+        googleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { logIn();
+            }
+        });
 
         editEmail = findViewById(R.id.LogEmail);
         editPassword = findViewById(R.id.LogPassword);
@@ -109,6 +122,11 @@ public class LogInScreen extends AppCompatActivity {
             }
         });
 
+    }
+    private void logIn(){
+
+        Intent signInIntent = gsc.getSignInIntent();
+        startActivityForResult(signInIntent,RC_LOG_IN);
     }
 
 }

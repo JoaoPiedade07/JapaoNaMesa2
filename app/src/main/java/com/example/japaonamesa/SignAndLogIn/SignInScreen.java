@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,9 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.japaonamesa.FavouriteScreen.FavouriteScreen;
+
 import com.example.japaonamesa.HomeScreen.HomeScreen;
-import com.example.japaonamesa.ProfileScreen.ProfileScreen;
+
 import com.example.japaonamesa.R;
 import com.example.japaonamesa.WelcomeScreen;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -38,7 +36,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class SignInScreen extends AppCompatActivity {
-    TextView goToLogIn;
     Button signInButtom;
     EditText editEmail, editPassword;
     ImageView googleBtn, goToWelcomeScreen;

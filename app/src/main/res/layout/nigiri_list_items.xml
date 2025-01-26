@@ -51,10 +51,11 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_width="200dp"
+                android:layout_height="190dp"
                 android:src="@drawable/nigiripng"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:layout_gravity="center"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/backToNigiriScreen" />
 
@@ -76,7 +77,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:text="Shopping list: "
-                android:textSize="22dp"
+                android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -97,13 +98,13 @@
 
                 <CheckBox
                     android:id="@+id/checkBoxSushiRice"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingStart="12dp"
                     android:text="Sushi rice"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="24sp" />
 
             </LinearLayout>
 
@@ -115,7 +116,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• Short-grain Japanese rice\n• Rice vinegar\n• Sugar\n• Salt"
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp"/>
 
 
@@ -133,7 +134,7 @@
                     android:paddingStart="12dp"
                     android:text="Fish"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="24sp" />
 
             </LinearLayout>
 
@@ -145,7 +146,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• Fresh, high-quality fish like tuna (maguro), salmon (sake), or shrimp (ebi)\n• Optional toppings: tamago (sweet omelet), eel (unagi), or avocado"
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp"/>
 
 
@@ -164,7 +165,7 @@
                     android:paddingStart="12dp"
                     android:text="Wasabi (optional)"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="24sp" />
 
             </LinearLayout>
 
@@ -176,7 +177,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• A small amount of wasabi paste to place between the rice and fish (optional)"
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp"/>
 
 
@@ -194,7 +195,7 @@
                     android:paddingStart="12dp"
                     android:text="Soy Sauce"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="24sp" />
 
             </LinearLayout>
 
@@ -206,7 +207,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• For dipping the nigiri"
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp"/>
 
 
@@ -224,7 +225,7 @@
                     android:paddingStart="12dp"
                     android:text="Nori"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="24sp" />
 
             </LinearLayout>
 
@@ -236,7 +237,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• Small strips of nori (seaweed) to wrap around certain types of nigiri, like tamago or unagi\n"
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp"/>
 
 
@@ -248,7 +249,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:text="Tools: "
-                android:textSize="22dp"
+                android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <View
@@ -273,7 +274,7 @@
                     android:paddingStart="12dp"
                     android:text="Sharp Knife"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="24sp" />
 
             </LinearLayout>
 
@@ -285,7 +286,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• For slicing the fish into thin pieces"
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp"/>
 
 
@@ -303,7 +304,7 @@
                     android:paddingStart="12dp"
                     android:text="Bamboo Sushi Mat (optional)"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="24sp" />
 
             </LinearLayout>
 
@@ -315,7 +316,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• While not necessary for nigiri, it's useful if you're making other types of sushi."
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp"/>
 
             </LinearLayout>
@@ -332,7 +333,7 @@
                     android:paddingStart="12dp"
                     android:text="Rice Paddle"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="24sp" />
 
             </LinearLayout>
 
@@ -344,7 +345,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• For mixing the sushi rice with vinegar"
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp"/>
 
             </LinearLayout>
@@ -361,7 +362,7 @@
                     android:paddingStart="12dp"
                     android:text="Bowl of Water"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="24sp" />
 
             </LinearLayout>
 
@@ -373,7 +374,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• To wet your hands while shaping the rice to prevent sticking\n"
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp"/>
 
             </LinearLayout>
@@ -384,7 +385,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:text="Basic Steps: "
-                android:textSize="22dp"
+                android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <View
@@ -409,7 +410,7 @@
                     android:paddingStart="12dp"
                     android:text="Prepare the Sushi Rice"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="24sp" />
 
 
             </LinearLayout>
@@ -422,7 +423,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• Cook the short-grain rice, then mix it with a blend of rice vinegar, sugar, and salt."
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp"/>
 
             </LinearLayout>
@@ -439,7 +440,7 @@
                     android:paddingStart="12dp"
                     android:text="Prepare the Fish"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="24sp" />
 
 
             </LinearLayout>
@@ -452,7 +453,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• Slice the fish into thin pieces, about 2-3 inches long and 1 inch wide."
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp"/>
 
             </LinearLayout>
@@ -469,7 +470,7 @@
                     android:paddingStart="12dp"
                     android:text="Shape the Rice"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="24sp" />
 
             </LinearLayout>
 
@@ -481,7 +482,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• Wet your hands with water, take a small amount of rice (about a tablespoon), and shape it into an oval mound."
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp"/>
 
             </LinearLayout>
@@ -498,7 +499,7 @@
                     android:paddingStart="12dp"
                     android:text="Assemble the Nigiri"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="24sp" />
 
             </LinearLayout>
 
@@ -510,7 +511,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• Place a small dab of wasabi on the rice (optional).\n• Press the fish slice gently onto the rice."
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp"/>
 
             </LinearLayout>
@@ -527,7 +528,7 @@
                     android:paddingStart="12dp"
                     android:text="Serve"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="24sp" />
 
 
             </LinearLayout>
@@ -540,7 +541,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• Arrange the nigiri on a plate, serve with soy sauce, and enjoy.\n"
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp"/>
 
             </LinearLayout>

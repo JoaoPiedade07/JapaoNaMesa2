@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.japaonamesa"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.japaonamesa"
@@ -38,16 +38,16 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation ("com.github.bumptech.glide:glide:4.14.2@aar")
-    implementation ("com.google.code.gson:gson:2.8.6")
-    implementation ("com.github.dhaval2404:imagepicker:2.1")
-    implementation("com.google.firebase:firebase-auth")
-    implementation("com.google.android.gms:play-services-auth:20.7.0")
-    implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
-    implementation("com.google.firebase:firebase-database")
+    implementation (libs.glide)
+    implementation (libs.gson)
+    implementation (libs.imagepicker)
+    implementation(libs.google.firebase.auth)
+    implementation(libs.play.services.auth)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.google.firebase.database)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation(libs.espresso.core.v351)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
