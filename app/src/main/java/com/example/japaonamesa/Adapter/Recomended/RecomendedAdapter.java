@@ -16,6 +16,7 @@ import com.example.japaonamesa.R;
 import com.example.japaonamesa.Recepies.Gyosas.GyosasScreen;
 import com.example.japaonamesa.Recepies.Rolls.SpringRollsScreen;
 import com.example.japaonamesa.Recepies.Soups.MisoSoupScreen;
+import com.example.japaonamesa.Recepies.Sushi.Nigiri.NigirisScreen;
 import com.example.japaonamesa.Recepies.Sushi.Sashimi.TunaSashimi.TunaSashimiScreen;
 
 import java.util.List;
@@ -64,6 +65,12 @@ public class RecomendedAdapter extends RecyclerView.Adapter<RecomendedAdapter.Re
                         break;
                     case "Tuna Sashimi":
                         intent = new Intent(context, TunaSashimiScreen.class);
+                        break;
+                    /*case "Udon":
+                        intent = new Intent(context, TunaSashimiScreen.class);
+                        break;*/
+                    case "Salmon nigiri":
+                        intent = new Intent(context, NigirisScreen.class);
                         break;
 
                     default:

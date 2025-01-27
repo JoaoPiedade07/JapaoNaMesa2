@@ -90,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="14dp"
                 android:layout_marginEnd="10dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +127,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:src="@drawable/privacypolicy_vector" />
+                    android:src="@drawable/about_vector" />
 
                 <TextView
                     android:layout_width="0dp"
