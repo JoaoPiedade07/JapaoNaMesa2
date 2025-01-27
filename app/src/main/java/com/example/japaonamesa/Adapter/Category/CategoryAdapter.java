@@ -58,8 +58,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                         intent = new Intent(context, SushiCategoryScreen.class);
                         break;
                     //case "Ramen":
-                       // intent = new Intent(context, RamenCategoryScreen.class);
-                       // break;
+                        //intent = new Intent(context, RamenCategoryScreen.class);
+                        //break;
 
                     case "Rolls":
                         intent = new Intent(context, RollsCategoryScreen.class);

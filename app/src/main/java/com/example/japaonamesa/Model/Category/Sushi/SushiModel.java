@@ -4,11 +4,11 @@ public class SushiModel {
 
     private int sushiImage;
     private String sushiName;
-    private String key_id;
-    private String favStatus;
+    private int key_id;
+    private int favStatus;
 
 
-    public SushiModel(int sushiImage, String sushiName, String key_id, String favStatus) {
+    public SushiModel(int sushiImage, String sushiName, int key_id, int favStatus) {
         this.sushiImage = sushiImage;
         this.sushiName = sushiName;
         this.key_id = key_id;
@@ -31,19 +31,19 @@ public class SushiModel {
         this.sushiName = sushiName;
     }
 
-    public String getKey_id() {
+    public int getKey_id() {
         return key_id;
     }
 
-    public void setKey_id(String key_id) {
+    public void setKey_id(int key_id) {
         this.key_id = key_id;
     }
 
-    public String getFavStatus() {
+    public int getFavStatus() {
         return favStatus;
     }
 
-    public void setFavStatus(String favStatus) {
+    public void setFavStatus(int favStatus) {
         this.favStatus = favStatus;
     }
 }

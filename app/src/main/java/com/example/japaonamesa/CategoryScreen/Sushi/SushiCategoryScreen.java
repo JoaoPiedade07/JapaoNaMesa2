@@ -7,7 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.japaonamesa.Adapter.Category.Sushi.SushiAdapter;
+import com.example.japaonamesa.Adapter.Recomended.RecomendedAdapter;
 import com.example.japaonamesa.CategoryScreen.CategoryScreen;
+import com.example.japaonamesa.FavouriteScreen.FavDB.FavDB;
 import com.example.japaonamesa.Model.Category.Sushi.SushiModel;
 import com.example.japaonamesa.R;
 import java.util.ArrayList;
@@ -16,6 +18,8 @@ public class SushiCategoryScreen extends AppCompatActivity {
     ImageView backToCategory;
     private ArrayList<SushiModel> sushiModels = new ArrayList<>();
     private RecyclerView CategorySushiScreenList;
+    private RecomendedAdapter recomendedAdapter;
+    private FavDB favDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,8 @@ public class SushiCategoryScreen extends AppCompatActivity {
         setContentView(R.layout.sushi_category_screen);
 
         backToCategory = findViewById(R.id.backToCategory);
+
+        favDB = new FavDB(this);
 
         backToCategory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,19 +44,29 @@ public class SushiCategoryScreen extends AppCompatActivity {
         CategorySushiScreenList.setLayoutManager(new GridLayoutManager(this, 2));
 
 
-        sushiModels.add(new SushiModel(R.drawable.nigiripng, "Salmon Nigiri", "0", "0"));
-        sushiModels.add(new SushiModel(R.drawable.sashimipng, "Salmon Sashimi", "1", "0"));
-        sushiModels.add(new SushiModel(R.drawable.californiarollpng, "California Roll", "2", "0"));
-        sushiModels.add(new SushiModel(R.drawable.tempurarollpng, "Tempura Roll", "3", "0"));
-        sushiModels.add(new SushiModel(R.drawable.spicytunarollpng, "Spicy Tuna Roll", "4", "0"));
-        sushiModels.add(new SushiModel(R.drawable.ebinigiripng, "Ebi Nigiri", "5", "0"));
-        sushiModels.add(new SushiModel(R.drawable.unaginigiripng, "Unagi Nigiri", "6", "0"));
-        sushiModels.add(new SushiModel(R.drawable.tunasahimipng, "Tuna Sashimi", "7", "0"));
+        sushiModels.add(new SushiModel(R.drawable.nigiripng, "Salmon Nigiri", 0, 0));
+        sushiModels.add(new SushiModel(R.drawable.sashimipng, "Salmon Sashimi", 1, 0));
+        sushiModels.add(new SushiModel(R.drawable.californiarollpng, "California Roll", 2, 0));
+        sushiModels.add(new SushiModel(R.drawable.tempurarollpng, "Tempura Roll", 3, 0));
+        sushiModels.add(new SushiModel(R.drawable.spicytunarollpng, "Spicy Tuna Roll", 4, 0));
+        sushiModels.add(new SushiModel(R.drawable.ebinigiripng, "Ebi Nigiri", 5, 0));
+        sushiModels.add(new SushiModel(R.drawable.unaginigiripng, "Unagi Nigiri", 6, 0));
+        sushiModels.add(new SushiModel(R.drawable.tunasahimipng, "Tuna Sashimi", 7, 0));
 
         SushiAdapter sushiAdapter = new SushiAdapter(sushiModels, this);
 
         CategorySushiScreenList.setAdapter(sushiAdapter);
 
+    }
+    public void updateRecomendedList() {
+        if (recomendedAdapter != null) {
+            recomendedAdapter.notifyDataSetChanged();  // Notifica o adaptador que a lista foi alterada
+        }
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateRecomendedList();  // Atualiza a lista quando a Activity for retomada
     }
 }

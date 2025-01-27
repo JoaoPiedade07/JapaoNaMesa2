@@ -11,8 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.japaonamesa.FavouriteScreen.FavDB.FavDB;
 import com.example.japaonamesa.HomeScreen.HomeScreen;
 import com.example.japaonamesa.Model.Category.Sushi.SushiModel;
+import com.example.japaonamesa.Model.Recomended.RecomendedModel;
 import com.example.japaonamesa.R;
 import com.example.japaonamesa.Recepies.Sushi.Nigiri.NigirisScreen;
 import com.example.japaonamesa.Recepies.Sushi.Sashimi.SalmonSashimi.SashimiScreen;
@@ -23,10 +25,12 @@ import java.util.List;
 public class SushiAdapter extends RecyclerView.Adapter<SushiAdapter.SushiViewHolder> {
     private List<SushiModel> sushiList;
     Context context;
+    private FavDB favDB;
 
     public SushiAdapter(List<SushiModel> sushiList, Context context) {
         this.sushiList = sushiList;
         this.context = context;
+        favDB = new FavDB(context);
     }
 
     @NonNull
@@ -38,6 +42,7 @@ public class SushiAdapter extends RecyclerView.Adapter<SushiAdapter.SushiViewHol
 
     @Override
     public void onBindViewHolder(@NonNull SushiAdapter.SushiViewHolder holder, int position) {
+        SushiModel item = sushiList.get(position);
 
         holder.sushiName.setText(sushiList.get(position).getSushiName());
         holder.sushiImage.setImageResource(sushiList.get(position).getSushiImage());
@@ -67,6 +72,28 @@ public class SushiAdapter extends RecyclerView.Adapter<SushiAdapter.SushiViewHol
                 context.startActivity(intent);
             }
         });
+
+        // Verifica se o item está favoritado e altera o ícone do favorito
+        if (item.getFavStatus() == 1) {
+            holder.favBtn.setImageResource(R.drawable.favourite_food_vector_red); // Ícone quando favorito
+        } else {
+            holder.favBtn.setImageResource(R.drawable.favourite_food_vector); // Ícone quando não favorito
+        }
+
+        // Ao clicar no ícone de favorito, muda o status de favorito
+        holder.favBtn.setOnClickListener(v -> {
+            if (item.getFavStatus() == 1) {
+                favDB.removeFavorite(item.getKey_id());
+                item.setFavStatus(0); // Atualiza o status para não favorito
+                holder.favBtn.setImageResource(R.drawable.favourite_food_vector);
+            } else {
+                favDB.addFavorite(item.getKey_id(), item.getSushiName(), String.valueOf(item.getSushiImage()));
+                item.setFavStatus(1); // Atualiza o status para favorito
+                holder.favBtn.setImageResource(R.drawable.favourite_food_vector_red);
+            }
+        });
+
+
     }
 
     @Override
@@ -77,7 +104,7 @@ public class SushiAdapter extends RecyclerView.Adapter<SushiAdapter.SushiViewHol
     public class SushiViewHolder extends RecyclerView.ViewHolder {
 
         private TextView sushiName;
-        private ImageView sushiImage, favBtnSushi;
+        private ImageView sushiImage, favBtn;
 
         public SushiViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -85,7 +112,7 @@ public class SushiAdapter extends RecyclerView.Adapter<SushiAdapter.SushiViewHol
             sushiName = itemView.findViewById(R.id.recomendedName);
             sushiImage = itemView.findViewById(R.id.recomendedImage);
 
-            favBtnSushi = itemView.findViewById(R.id.favBtn);
+            favBtn = itemView.findViewById(R.id.favBtn);
         }
     }
 }
