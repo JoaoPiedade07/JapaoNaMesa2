@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.japaonamesa.R;
 
 public class NigiriListItems extends AppCompatActivity {
-    CheckBox checkBoxSushiRice, checkBoxFish, checkBoxWasabi, checkBoxSoySauce, checkBoxNori;
+    CheckBox checkBoxSushiRice, checkBoxFish, checkBoxWasabi, checkBoxSoySauce; //checkBoxNori;
     ViewFlipper viewFlipper; // Adicionando o ViewFlipper
 
     @Override
@@ -25,13 +25,13 @@ public class NigiriListItems extends AppCompatActivity {
         setContentView(R.layout.nigiri_list_items);
 
         // Inicializar o ViewFlipper
-        viewFlipper = findViewById(R.id.viewFlipper);
+        viewFlipper = findViewById(R.id.viewFlipperSN);
 
-        checkBoxSushiRice = findViewById(R.id.checkBoxSushiRice);
-        checkBoxFish = findViewById(R.id.checkBoxFish);
+        checkBoxSushiRice = findViewById(R.id.checkBoxRice);
+        checkBoxFish = findViewById(R.id.checkBoxSSashimi);
         checkBoxWasabi = findViewById(R.id.checkBoxWasabi);
         checkBoxSoySauce = findViewById(R.id.checkBoxSoySauce);
-        checkBoxNori = findViewById(R.id.checkBoxNori);
+        //checkBoxNori = findViewById(R.id.checkBoxNori);
 
         checkBoxSushiRice.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -77,7 +77,7 @@ public class NigiriListItems extends AppCompatActivity {
             }
         });
 
-        checkBoxNori.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        /* checkBoxNori.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -86,7 +86,7 @@ public class NigiriListItems extends AppCompatActivity {
                     checkBoxNori.setPaintFlags(checkBoxNori.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
                 }
             }
-        });
+        });*/
 
         // Configurando o botão para alternar para a próxima tela no ViewFlipper
         Button nextButton = findViewById(R.id.nextButton);

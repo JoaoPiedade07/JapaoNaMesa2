@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:padding="16dp">
 
@@ -52,7 +53,8 @@
         <!-- Tela de Ingredientes -->
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -62,58 +64,100 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="12dp"
                     android:text="Shopping list:"
-                    android:textSize="20sp" />
+                    android:textSize="24sp" />
 
                 <CheckBox
                     android:id="@+id/checkBoxTSashimi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fresh sashimi-grade tuna (200-300 grams)"
-                    android:textSize="18sp" />
+                    android:text="Fresh sashimi-grade tuna"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• (200-300 grams)\n• Look for high-quality, sushi/sashimi-grade fish."
+                    android:textSize="18sp"
+                    android:paddingStart="12dp"/>
 
                 <CheckBox
                     android:id="@+id/checkBoxSoySauce"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Soy sauce (for dipping)"
-                    android:textSize="18sp" />
+                    android:text="Soy sauce"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• For dipping the tuna sashimi"
+                    android:textSize="18sp"
+                    android:paddingStart="12dp"/>
 
                 <CheckBox
                     android:id="@+id/checkBoxWasabi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Wasabi paste (optional)"
-                    android:textSize="18sp" />
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• A small amount of wasabi paste, for adding a touch of heat."
+                    android:textSize="18sp"
+                    android:paddingStart="12dp"/>
 
                 <CheckBox
                     android:id="@+id/checkBoxPickleGinger"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pickled ginger (optional)"
-                    android:textSize="18sp" />
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Common as a palate cleanser."
+                    android:textSize="18sp"
+                    android:paddingStart="12dp"/>
 
                 <CheckBox
                     android:id="@+id/checkBoxSesameSeeds"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sesame seeds (optional)"
-                    android:textSize="18sp" />
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• For garnishing."
+                    android:textSize="18sp"
+                    android:paddingStart="12dp"/>
 
                 <CheckBox
                     android:id="@+id/checkBoxLemonWedges"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Lemon or lime wedges (optional)"
-                    android:textSize="18sp" />
+                    android:textSize="20sp" />
 
                 <CheckBox
                     android:id="@+id/checkBoxShisoLeaves"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Shiso leaves (optional)"
-                    android:textSize="18sp" />
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• For plating."
+                    android:textSize="18sp"
+                    android:paddingStart="12dp"/>
 
             </LinearLayout>
         </ScrollView>
@@ -121,7 +165,8 @@
         <!-- Tela de Preparação -->
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -131,22 +176,22 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="12dp"
                     android:text="Preparation:"
-                    android:textSize="20sp" />
+                    android:textSize="24sp" />
 
                 <CheckBox
                     android:id="@+id/checkStep1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1. Prepare the Tuna"
-                    android:textSize="18sp" />
+                    android:textSize="22sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• Ensure the tuna is fresh and sashimi-grade. \n• Chill it in the fridge for at least 15 minutes to firm up (this makes slicing easier)."
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp" />
 
                 <CheckBox
@@ -154,13 +199,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2. Slice the Tuna"
-                    android:textSize="18sp" />
+                    android:textSize="22sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• Slice the tuna into thin, even pieces (around 1cm thick). \n• Use a very sharp knife for clean cuts."
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp" />
 
                 <CheckBox
@@ -168,13 +213,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3. Plating"
-                    android:textSize="18sp" />
+                    android:textSize="22sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• Arrange the tuna slices neatly on a plate. You can use shiso leaves as a decorative base. \n• Garnish with sesame seeds, lemon wedges, or even microgreens for added flair."
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     android:paddingStart="12dp" />
 
                 <CheckBox
@@ -182,13 +227,54 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4. Serve"
-                    android:textSize="18sp" />
+                    android:textSize="22sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="• Serve with small dishes of soy sauce for dipping. \n• Add a dab of wasabi on the side or mix it into the soy sauce. \n• Pair with pickled ginger to cleanse the palate between bites."
-                    android:textSize="16sp"
+                    android:textSize="20sp"
+                    android:paddingStart="12dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Tips for success:"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Quality matters: Always use sashimi-grade tuna since it's meant to be eaten raw.\n"
+                    android:textSize="20sp"
+                    android:paddingStart="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Knife skills: A sharp knife is essential to get clean slices without tearing the fish.\n"
+                    android:textSize="20sp"
+                    android:paddingStart="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Chill the fish: Slightly chilled tuna tastes better and holds its shape while slicing.\n"
+                    android:textSize="20sp"
                     android:paddingStart="12dp" />
 
             </LinearLayout>
@@ -210,9 +296,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_margin="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
             android:text="Anterior"
             android:backgroundTint="@color/blue"
+            app:cornerRadius="10dp"
             android:textSize="18sp" />
 
         <Button
@@ -220,9 +308,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_margin="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="4dp"
             android:text="Próximo"
             android:backgroundTint="@color/blue"
+            app:cornerRadius="10dp"
             android:textSize="18sp" />
     </LinearLayout>
 
