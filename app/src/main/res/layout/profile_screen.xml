@@ -9,25 +9,13 @@
     tools:context=".ProfileScreen.ProfileScreen">
 
 
-    <ImageView
-        android:id="@+id/SettingsBtn"
-        android:layout_width="40dp"
-        android:layout_height="30dp"
-        android:src="@drawable/settings_vector"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
     <LinearLayout
         android:id="@+id/LayoutUserImg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SettingsBtn">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/UserName"
@@ -35,21 +23,20 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginStart="12dp"
-
             android:layout_weight="1"
-            android:text="joaopiedade"
-            android:textSize="22dp"
+            android:text="Username"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ProfileImage"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginEnd="15dp"
-            android:background="@color/light_grey"
-            android:src="@drawable/profile_img_vector"
-            app:strokeColor="@color/grey"
-            app:strokeWidth="4dp" />
+        <ImageView
+            android:id="@+id/SettingsBtn"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/settings_vector"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </LinearLayout>
 
@@ -59,8 +46,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
-        android:text="Joao Piedade"
-        android:textSize="14dp"
+        android:text="Name"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LayoutUserImg" />
 
@@ -69,25 +56,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-
-        android:text="love gyosas and coffe"
-        android:textSize="14dp"
+        android:layout_marginTop="8dp"
+        android:text="Description"
+        android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ProfileName" />
-
-    <Button
-        android:id="@+id/EditProfileBtn"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="4dp"
-        android:layout_margin="10dp"
-        android:backgroundTint="@color/blue"
-        android:padding="8dp"
-        android:text="Edit profile"
-        android:textSize="16dp"
-        app:cornerRadius="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DescriptionText" />
 
     <View
         android:id="@+id/DividerProfile"
@@ -98,7 +71,7 @@
         android:background="@color/light_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/EditProfileBtn" />
+        app:layout_constraintTop_toBottomOf="@id/DescriptionText" />
 
     <LinearLayout
         android:id="@+id/LayoutAchievements"

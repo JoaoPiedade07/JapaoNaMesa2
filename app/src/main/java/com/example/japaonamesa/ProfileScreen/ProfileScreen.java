@@ -28,10 +28,6 @@ public class ProfileScreen extends AppCompatActivity {
 
     ImageView settingsBtn;
 
-    Button editProfile;
-
-    private RecyclerView recyclerViewAchievementsList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,20 +68,5 @@ public class ProfileScreen extends AppCompatActivity {
                 finish();
             }
         });
-
-        //Edit profile
-        editProfile = findViewById(R.id.EditProfileBtn);
-
-        editProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), EditProfileScreen.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-
-
     }
 }

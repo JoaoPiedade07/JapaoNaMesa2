@@ -16,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.japaonamesa.HomeScreen.HomeScreen;
 import com.example.japaonamesa.ProfileScreen.ProfileScreen;
+import com.example.japaonamesa.ProfileScreen.Settings.SettingsScreen;
 import com.example.japaonamesa.R;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,9 +25,9 @@ import com.google.firebase.database.DatabaseReference;
 
 public class EditProfileScreen extends AppCompatActivity {
 
-    ImageView backProfileBtn,editProfileImg;
+    ImageView backProfileBtn;
 
-    TextView editProfileImage, editName, editUsername, editDescription, doneBtn;
+    TextView editName, editUsername, editDescription, doneBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,26 +40,9 @@ public class EditProfileScreen extends AppCompatActivity {
         backProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ProfileScreen.class);
+                Intent intent = new Intent(getApplicationContext(), SettingsScreen.class);
                 startActivity(intent);
                 finish();
-            }
-        });
-
-        //Edit Profile Image
-        editProfileImg = findViewById(R.id.ProfileImage);
-        editProfileImage = findViewById(R.id.EditProfileImage);
-
-
-        editProfileImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ImagePicker.with(EditProfileScreen.this)
-                        .crop()
-                        .compress(1024)
-                        .maxResultSize(1080,1080)
-                        .start();
-
             }
         });
 
@@ -100,12 +84,5 @@ public class EditProfileScreen extends AppCompatActivity {
 
 
 
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        Uri uri = data.getData();
-        editProfileImg.setImageURI(uri);
     }
 }
