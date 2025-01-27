@@ -30,8 +30,7 @@
         android:layout_marginTop="8dp"
         android:layout_centerHorizontal="true"
         android:text="Tuna Sashimi"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textSize="30sp" />
 
     <!-- Divisor -->
     <View

@@ -13,65 +13,12 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toTopOf="@id/cardView"
         android:scrollbars="none"
-        android:layout_marginBottom="65dp">
+        android:layout_marginBottom="75dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="20dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="12dp"
-                    android:textAlignment="textStart"
-                    android:src="@drawable/search_vector"/>
-
-                <!-- Vertical LinearLayout for location text and spinner -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAlignment="center"
-                        android:textColor="@color/grey"
-                        android:text="location"/>
-
-                    <Spinner
-                        android:id="@+id/SpinnerLocation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:layout_gravity="center"
-                        android:popupBackground="@color/white"
-                        android:dropDownWidth="match_parent"
-                        android:entries="@array/spinnerLocation"
-                        android:gravity="center"
-                        android:spinnerMode="dropdown"/>
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="12dp"
-                    android:src="@drawable/profile_img_vector"/>
-
-            </LinearLayout>
-
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -94,6 +41,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="view all"
+                        android:padding="8dp"
                         android:textColor="@color/grey"
                         android:textSize="16dp"/>
 

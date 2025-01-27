@@ -39,7 +39,6 @@ public class HomeScreen extends AppCompatActivity {
 
     private RecyclerView recyclerViewCategoryList, recyclerViewRecomendList;
     private ArrayList<RecomendedModel> recomendedModels = new ArrayList<>();
-    Spinner spinnerLocation;
     private RecomendedAdapter recomendedAdapter;
     private FavDB favDB;
 
@@ -115,17 +114,11 @@ public class HomeScreen extends AppCompatActivity {
         recomendedModels.add(new RecomendedModel(R.drawable.misopng, "Miso Soup", 17, 0));
         recomendedModels.add(new RecomendedModel(R.drawable.gyosapng, "Gyosas", 18, 0));
         recomendedModels.add(new RecomendedModel(R.drawable.tunasahimipng, "Tuna Sashimi", 7, 0));
-
+        recomendedModels.add(new RecomendedModel(R.drawable.udonpng, "Udon", 19, 0));
+        recomendedModels.add(new RecomendedModel(R.drawable.nigiripng, "Salmon nigiri", 20, 0));
 
         recomendedAdapter = new RecomendedAdapter(recomendedModels, this);  // Instanciar o adaptador
         recyclerViewRecomendList.setAdapter(recomendedAdapter);
-
-        //SpinnerLocation
-        spinnerLocation = findViewById(R.id.SpinnerLocation);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.spinnerLocation, R.layout.spinner_item);
-        adapter.setDropDownViewResource(R.layout.spinner_item);
-        spinnerLocation.setAdapter(adapter);
 
     }
     // Método para atualizar a lista de recomendados quando necessário

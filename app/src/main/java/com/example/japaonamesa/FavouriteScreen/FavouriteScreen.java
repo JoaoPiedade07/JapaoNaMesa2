@@ -3,7 +3,9 @@ package com.example.japaonamesa.FavouriteScreen;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -23,6 +25,7 @@ public class FavouriteScreen extends AppCompatActivity {
 
     private LinearLayout homescreen, profilescreen;
     private RecyclerView recyclerViewFavList;
+    private TextView emptyTextView;
     private List<FavItem> favItemList = new ArrayList<>();
 
     @Override
@@ -33,6 +36,8 @@ public class FavouriteScreen extends AppCompatActivity {
         // Inicializar botões de navegação
         homescreen = findViewById(R.id.Homescreen);
         profilescreen = findViewById(R.id.Profilescreen);
+        emptyTextView = findViewById(R.id.empty_text_view);
+
 
         // Navegação para a HomeScreen
         homescreen.setOnClickListener(v -> {
@@ -87,9 +92,18 @@ public class FavouriteScreen extends AppCompatActivity {
             } while (cursor.moveToNext());
             cursor.close();
         }
+        if (favItemList.isEmpty()) {
+            // Mostrar mensagem de nenhum conteúdo
+            emptyTextView.setVisibility(View.VISIBLE);
+            recyclerViewFavList.setVisibility(View.GONE);
+        } else {
+            // Esconder a mensagem e mostrar o RecyclerView
+            emptyTextView.setVisibility(View.GONE);
+            recyclerViewFavList.setVisibility(View.VISIBLE);
 
-        // Configurar o RecyclerView com o adaptador
-        FavouriteAdapter adapter = new FavouriteAdapter(this, favItemList);
-        recyclerViewFavList.setAdapter(adapter);
+            // Configurar o RecyclerView com o adaptador
+            FavouriteAdapter adapter = new FavouriteAdapter(this, favItemList);
+            recyclerViewFavList.setAdapter(adapter);
+        }
     }
 }
