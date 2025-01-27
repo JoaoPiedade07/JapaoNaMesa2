@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import com.example.japaonamesa.R;
-import com.example.japaonamesa.Recepies.Sushi.NigirisScreen;
 
 public class NigiriListItems extends AppCompatActivity {
     CheckBox checkBoxSushiRice, checkBoxFish, checkBoxWasabi, checkBoxSoySauce, checkBoxNori;

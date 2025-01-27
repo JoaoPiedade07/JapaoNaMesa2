@@ -14,9 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.japaonamesa.HomeScreen.HomeScreen;
 import com.example.japaonamesa.Model.Category.Sushi.SushiModel;
 import com.example.japaonamesa.R;
-import com.example.japaonamesa.Recepies.Sushi.NigirisScreen;
-import com.example.japaonamesa.Recepies.Sushi.Sashimi.SashimiScreen;
-import com.example.japaonamesa.Recepies.Sushi.Sashimi.TunaSashimiScreen;
+import com.example.japaonamesa.Recepies.Sushi.Nigiri.NigirisScreen;
+import com.example.japaonamesa.Recepies.Sushi.Sashimi.SalmonSashimi.SashimiScreen;
+import com.example.japaonamesa.Recepies.Sushi.Sashimi.TunaSashimi.TunaSashimiScreen;
 
 import java.util.List;
 

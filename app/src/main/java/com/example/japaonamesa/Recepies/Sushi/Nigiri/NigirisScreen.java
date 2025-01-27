@@ -1,4 +1,4 @@
-package com.example.japaonamesa.Recepies.Sushi;
+package com.example.japaonamesa.Recepies.Sushi.Nigiri;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,16 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.japaonamesa.CategoryScreen.CategoryScreen;
 import com.example.japaonamesa.HomeScreen.HomeScreen;
 import com.example.japaonamesa.R;
-import com.example.japaonamesa.Recepies.Sushi.Nigiri.NigiriListItems;
 
 public class NigirisScreen extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.japaonamesa.Recepies.Sushi.Sashimi;
+package com.example.japaonamesa.Recepies.Sushi.Sashimi.SalmonSashimi;
 
 import android.content.Intent;
 import android.os.Bundle;

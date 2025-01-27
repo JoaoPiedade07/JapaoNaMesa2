@@ -15,7 +15,10 @@
         android:theme="@style/Theme.JapaoNaMesa"
         tools:targetApi="31" >
         <activity
-            android:name=".Recepies.Sushi.Sashimi.TunaSashimiScreen"
+            android:name=".Recepies.Sushi.Sashimi.TunaSashimi.TunaSashimiListItems"
+            android:exported="false" />
+        <activity
+            android:name=".Recepies.Sushi.Sashimi.TunaSashimi.TunaSashimiScreen"
             android:exported="false" />
         <activity
             android:name=".Recepies.Sushi.Nigiri.NigiriListItems"
@@ -51,10 +54,10 @@
             android:name=".Recepies.Soups.MisoSoupScreen"
             android:exported="false" />
         <activity
-            android:name=".Recepies.Sushi.NigirisScreen"
+            android:name=".Recepies.Sushi.Nigiri.NigirisScreen"
             android:exported="false" />
         <activity
-            android:name=".Recepies.Sushi.Sashimi.SashimiScreen"
+            android:name=".Recepies.Sushi.Sashimi.SalmonSashimi.SashimiScreen"
             android:exported="false" />
         <activity
             android:name=".Recepies.Udon.TempuraUdonScreen"

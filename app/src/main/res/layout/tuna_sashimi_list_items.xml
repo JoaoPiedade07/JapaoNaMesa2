@@ -1,0 +1,229 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <!-- Botão para voltar para a tela anterior -->
+    <ImageView
+        android:id="@+id/backToTSashimiScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_back" />
+
+    <!-- Imagem principal -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_below="@id/backToTSashimiScreen"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/tunasahimipng" />
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView2"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
+        android:text="Tuna Sashimi"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!-- Divisor -->
+    <View
+        android:id="@+id/dividerNigiriImg"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/textView4"
+        android:layout_marginTop="8dp"
+        android:background="@color/light_grey" />
+
+    <!-- ViewFlipper para alternar entre as telas -->
+    <ViewFlipper
+        android:id="@+id/viewFlipperTS"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/dividerNigiriImg"
+        android:layout_above="@id/navigationButtons">
+
+        <!-- Tela de Ingredientes -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Shopping list:"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxTSashimi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fresh sashimi-grade tuna (200-300 grams)"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxSoySauce"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Soy sauce (for dipping)"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxWasabi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wasabi paste (optional)"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxPickleGinger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pickled ginger (optional)"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxSesameSeeds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sesame seeds (optional)"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxLemonWedges"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lemon or lime wedges (optional)"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxShisoLeaves"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shiso leaves (optional)"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Tela de Preparação -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Preparation:"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/checkStep1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. Prepare the Tuna"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Ensure the tuna is fresh and sashimi-grade. \n• Chill it in the fridge for at least 15 minutes to firm up (this makes slicing easier)."
+                    android:textSize="16sp"
+                    android:paddingStart="12dp" />
+
+                <CheckBox
+                    android:id="@+id/checkStep2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. Slice the Tuna"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Slice the tuna into thin, even pieces (around 1cm thick). \n• Use a very sharp knife for clean cuts."
+                    android:textSize="16sp"
+                    android:paddingStart="12dp" />
+
+                <CheckBox
+                    android:id="@+id/checkStep3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. Plating"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Arrange the tuna slices neatly on a plate. You can use shiso leaves as a decorative base. \n• Garnish with sesame seeds, lemon wedges, or even microgreens for added flair."
+                    android:textSize="16sp"
+                    android:paddingStart="12dp" />
+
+                <CheckBox
+                    android:id="@+id/checkStep4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4. Serve"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Serve with small dishes of soy sauce for dipping. \n• Add a dab of wasabi on the side or mix it into the soy sauce. \n• Pair with pickled ginger to cleanse the palate between bites."
+                    android:textSize="16sp"
+                    android:paddingStart="12dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </ViewFlipper>
+
+    <!-- Botões de navegação -->
+    <LinearLayout
+        android:id="@+id/navigationButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/previousButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:text="Anterior"
+            android:backgroundTint="@color/blue"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:text="Próximo"
+            android:backgroundTint="@color/blue"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</RelativeLayout>

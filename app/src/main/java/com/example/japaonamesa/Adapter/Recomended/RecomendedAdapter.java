@@ -16,7 +16,7 @@ import com.example.japaonamesa.R;
 import com.example.japaonamesa.Recepies.Gyosas.GyosasScreen;
 import com.example.japaonamesa.Recepies.Rolls.SpringRollsScreen;
 import com.example.japaonamesa.Recepies.Soups.MisoSoupScreen;
-import com.example.japaonamesa.Recepies.Sushi.Sashimi.TunaSashimiScreen;
+import com.example.japaonamesa.Recepies.Sushi.Sashimi.TunaSashimi.TunaSashimiScreen;
 
 import java.util.List;
 
