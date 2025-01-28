@@ -54,7 +54,6 @@ public class SushiCategoryScreen extends AppCompatActivity {
         sushiModels.add(new SushiModel(R.drawable.tunasahimipng, "Tuna Sashimi", 7, 0));
 
         SushiAdapter sushiAdapter = new SushiAdapter(sushiModels, this);
-
         CategorySushiScreenList.setAdapter(sushiAdapter);
 
     }

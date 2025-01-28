@@ -3,11 +3,11 @@ package com.example.japaonamesa.Model.Category.Soups;
 public class SoupsModel {
     private int soupImage;
     private String soupName;
-    private String key_id;
-    private String favStatus;
+    private int key_id;
+    private int favStatus;
 
 
-    public SoupsModel(int soupImage, String soupName, String key_id, String favStatus) {
+    public SoupsModel(int soupImage, String soupName, int key_id, int favStatus) {
         this.soupImage = soupImage;
         this.soupName = soupName;
         this.key_id = key_id;
@@ -30,19 +30,19 @@ public class SoupsModel {
         this.soupName = soupName;
     }
 
-    public String getKey_id() {
+    public int getKey_id() {
         return key_id;
     }
 
-    public void setKey_id(String key_id) {
+    public void setKey_id(int key_id) {
         this.key_id = key_id;
     }
 
-    public String getFavStatus() {
+    public int getFavStatus() {
         return favStatus;
     }
 
-    public void setFavStatus(String favStatus) {
+    public void setFavStatus(int favStatus) {
         this.favStatus = favStatus;
     }
 }
