@@ -58,15 +58,15 @@ public class ProfileScreen extends AppCompatActivity {
         });
 
         //Settings
-        settingsBtn = findViewById(R.id.SettingsBtn);
+        //settingsBtn = findViewById(R.id.SettingsBtn);
 
-        settingsBtn.setOnClickListener(new View.OnClickListener() {
+        /*settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SettingsScreen.class);
                 startActivity(intent);
                 finish();
             }
-        });
+        });*/
     }
 }

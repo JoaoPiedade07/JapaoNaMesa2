@@ -148,9 +148,9 @@
 
                 <ImageView
 
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/profile_vector" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/history_vector" />
 
             </LinearLayout>
 
