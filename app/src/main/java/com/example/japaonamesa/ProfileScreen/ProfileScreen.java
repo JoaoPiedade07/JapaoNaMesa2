@@ -13,12 +13,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.japaonamesa.Adapter.AchievementsAdapter;
 import com.example.japaonamesa.Adapter.Category.CategoryAdapter;
+import com.example.japaonamesa.Adapter.History.HistoryAdapter;
 import com.example.japaonamesa.Adapter.Recomended.RecomendedAdapter;
 import com.example.japaonamesa.FavouriteScreen.FavouriteScreen;
 import com.example.japaonamesa.HomeScreen.HomeScreen;
 import com.example.japaonamesa.HomeScreen.NonScrollingGridLayoutManager;
 import com.example.japaonamesa.Model.AchievementsModel;
 import com.example.japaonamesa.Model.Category.CategoryModel;
+import com.example.japaonamesa.Model.History.HistoryModel;
 import com.example.japaonamesa.Model.Recomended.RecomendedModel;
 import com.example.japaonamesa.ProfileScreen.EditProfile.EditProfileScreen;
 import com.example.japaonamesa.ProfileScreen.Settings.SettingsScreen;
@@ -30,9 +32,9 @@ import java.util.List;
 public class ProfileScreen extends AppCompatActivity {
 
     LinearLayout homescreen, favouritescreen;
-    private RecyclerView recyclerViewCategoryList, recyclerViewRecomendList;
-    private ArrayList<RecomendedModel> recomendedModels = new ArrayList<>();
-    private RecomendedAdapter recomendedAdapter;
+    private RecyclerView recyclerViewCategoryList, recyclerViewHistoryList;
+    private ArrayList<HistoryModel> historyModels = new ArrayList<>();
+    private HistoryAdapter historyAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,19 +82,19 @@ public class ProfileScreen extends AppCompatActivity {
 
         recyclerViewCategoryList.setAdapter(categoryAdapter);
 
-        recyclerViewRecomendList = findViewById(R.id.RecomendList);
-        recyclerViewRecomendList.setHasFixedSize(true);
-        recyclerViewRecomendList.setLayoutManager(new NonScrollingGridLayoutManager(this, 2));
+        recyclerViewHistoryList = findViewById(R.id.RecomendList);
+        recyclerViewHistoryList.setHasFixedSize(true);
+        recyclerViewHistoryList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        recomendedModels.add(new RecomendedModel(R.drawable.rollspng, "Spring Rolls", 16, 0));
-        recomendedModels.add(new RecomendedModel(R.drawable.misopng, "Miso Soup", 17, 0));
-        recomendedModels.add(new RecomendedModel(R.drawable.gyosapng, "Gyosas", 18, 0));
-        recomendedModels.add(new RecomendedModel(R.drawable.tunasahimipng, "Tuna Sashimi", 7, 0));
-        recomendedModels.add(new RecomendedModel(R.drawable.udonpng, "Udon", 19, 0));
-        recomendedModels.add(new RecomendedModel(R.drawable.nigiripng, "Salmon nigiri", 20, 0));
+        historyModels.add(new HistoryModel(R.drawable.rollspng, "Spring Rolls", 16, 0));
+        historyModels.add(new HistoryModel(R.drawable.misopng, "Miso Soup", 17, 0));
+        historyModels.add(new HistoryModel(R.drawable.gyosapng, "Gyosas", 18, 0));
+        historyModels.add(new HistoryModel(R.drawable.tunasahimipng, "Tuna Sashimi", 7, 0));
+        historyModels.add(new HistoryModel(R.drawable.udonpng, "Udon", 19, 0));
+        historyModels.add(new HistoryModel(R.drawable.nigiripng, "Salmon nigiri", 20, 0));
 
-        recomendedAdapter = new RecomendedAdapter(recomendedModels, this);  // Instanciar o adaptador
-        recyclerViewRecomendList.setAdapter(recomendedAdapter);
+        historyAdapter = new HistoryAdapter(historyModels, this);  // Instanciar o adaptador
+        recyclerViewHistoryList.setAdapter(historyAdapter);
 
     }
 }

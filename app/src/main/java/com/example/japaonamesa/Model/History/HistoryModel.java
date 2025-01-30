@@ -1,26 +1,26 @@
-package com.example.japaonamesa.Model.Recomended;
+package com.example.japaonamesa.Model.History;
 
-public class RecomendedModel {
+public class HistoryModel {
 
-    private int recomendedImage;
-    private String recomendedName;
+    private int historyImage;
+    private String historyName;
     private int key_id;
     private int favStatus;
 
-    public RecomendedModel(int image, String name, int key_id, int favStatus) {
-        this.recomendedImage = image;
-        this.recomendedName = name;
+    public HistoryModel(int image, String name, int key_id, int favStatus) {
+        this.historyImage = image;
+        this.historyName = name;
         this.key_id = key_id;
         this.favStatus = favStatus;
 
     }
 
     public int getImage() {
-        return recomendedImage;
+        return historyImage;
     }
 
     public String getName() {
-        return recomendedName;
+        return historyName;
     }
     public int getKey_id() {
         return key_id;
