@@ -75,19 +75,19 @@
             android:name=".CategoryScreen.CategoryScreen"
             android:exported="false" />
         <activity
-            android:name=".ProfileScreen.EditProfile.EditDescScreen"
+            android:name=".HomeScreen.Settings.EditProfile.EditDescScreen"
             android:exported="false" />
         <activity
-            android:name=".ProfileScreen.EditProfile.EditUsernameScreen"
+            android:name=".HomeScreen.Settings.EditProfile.EditUsernameScreen"
             android:exported="false" />
         <activity
-            android:name=".ProfileScreen.EditProfile.EditNameScreen"
+            android:name=".HomeScreen.Settings.EditProfile.EditNameScreen"
             android:exported="false" />
         <activity
-            android:name=".ProfileScreen.EditProfile.EditProfileScreen"
+            android:name=".HomeScreen.Settings.EditProfile.EditProfileScreen"
             android:exported="false" />
         <activity
-            android:name=".ProfileScreen.Settings.SettingsScreen"
+            android:name=".HomeScreen.Settings.SettingsScreen"
             android:exported="false" />
         <activity
             android:name=".ProfileScreen.ProfileScreen"

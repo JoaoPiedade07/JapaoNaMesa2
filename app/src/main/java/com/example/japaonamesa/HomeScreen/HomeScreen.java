@@ -3,16 +3,11 @@ package com.example.japaonamesa.HomeScreen;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.ViewCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,12 +20,11 @@ import com.example.japaonamesa.FavouriteScreen.FavouriteScreen;
 import com.example.japaonamesa.Model.Category.CategoryModel;
 import com.example.japaonamesa.Model.Recomended.RecomendedModel;
 import com.example.japaonamesa.ProfileScreen.ProfileScreen;
-import com.example.japaonamesa.ProfileScreen.Settings.SettingsScreen;
+import com.example.japaonamesa.HomeScreen.Settings.SettingsScreen;
 import com.example.japaonamesa.R;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class HomeScreen extends AppCompatActivity {

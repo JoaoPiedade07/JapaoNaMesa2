@@ -1,30 +1,26 @@
-package com.example.japaonamesa.ProfileScreen.EditProfile;
+package com.example.japaonamesa.HomeScreen.Settings.EditProfile;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.japaonamesa.R;
 
-public class EditUsernameScreen extends AppCompatActivity {
+public class EditNameScreen extends AppCompatActivity {
 
-    ImageView BackeditProfile;
+    ImageView backeditProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.edit_username_screen);
+        setContentView(R.layout.edit_name_screen);
 
-        BackeditProfile = findViewById(R.id.BackeditProfile);
+        backeditProfile = findViewById(R.id.backeditProfile);
 
-        BackeditProfile.setOnClickListener(new View.OnClickListener() {
+        backeditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), EditProfileScreen.class);

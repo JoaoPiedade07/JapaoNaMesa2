@@ -1,23 +1,17 @@
-package com.example.japaonamesa.ProfileScreen.Settings;
+package com.example.japaonamesa.HomeScreen.Settings;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.japaonamesa.ProfileScreen.EditProfile.EditProfileScreen;
+import com.example.japaonamesa.HomeScreen.HomeScreen;
+import com.example.japaonamesa.HomeScreen.Settings.EditProfile.EditProfileScreen;
 import com.example.japaonamesa.ProfileScreen.ProfileScreen;
 import com.example.japaonamesa.R;
-import com.example.japaonamesa.SignAndLogIn.LogInScreen;
-import com.example.japaonamesa.SignAndLogIn.SignInScreen;
 import com.example.japaonamesa.WelcomeScreen;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -38,7 +32,7 @@ public class SettingsScreen extends AppCompatActivity {
         backProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ProfileScreen.class);
+                Intent intent = new Intent(getApplicationContext(), HomeScreen.class);
                 startActivity(intent);
                 finish();
             }

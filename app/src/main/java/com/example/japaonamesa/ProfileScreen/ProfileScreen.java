@@ -3,27 +3,18 @@ package com.example.japaonamesa.ProfileScreen;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.japaonamesa.Adapter.AchievementsAdapter;
 import com.example.japaonamesa.Adapter.Category.CategoryAdapter;
 import com.example.japaonamesa.Adapter.History.HistoryAdapter;
-import com.example.japaonamesa.Adapter.Recomended.RecomendedAdapter;
 import com.example.japaonamesa.FavouriteScreen.FavouriteScreen;
 import com.example.japaonamesa.HomeScreen.HomeScreen;
-import com.example.japaonamesa.HomeScreen.NonScrollingGridLayoutManager;
-import com.example.japaonamesa.Model.AchievementsModel;
 import com.example.japaonamesa.Model.Category.CategoryModel;
 import com.example.japaonamesa.Model.History.HistoryModel;
-import com.example.japaonamesa.Model.Recomended.RecomendedModel;
-import com.example.japaonamesa.ProfileScreen.EditProfile.EditProfileScreen;
-import com.example.japaonamesa.ProfileScreen.Settings.SettingsScreen;
 import com.example.japaonamesa.R;
 
 import java.util.ArrayList;
