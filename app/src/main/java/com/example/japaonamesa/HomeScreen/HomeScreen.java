@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ import com.example.japaonamesa.FavouriteScreen.FavouriteScreen;
 import com.example.japaonamesa.Model.Category.CategoryModel;
 import com.example.japaonamesa.Model.Recomended.RecomendedModel;
 import com.example.japaonamesa.ProfileScreen.ProfileScreen;
+import com.example.japaonamesa.ProfileScreen.Settings.SettingsScreen;
 import com.example.japaonamesa.R;
 
 
@@ -36,7 +38,7 @@ public class HomeScreen extends AppCompatActivity {
     LinearLayout homescreen, favouritescreen, profilescreen;
 
     TextView txtCategoryScreen;
-
+    ImageView settingsBtn;
     private RecyclerView recyclerViewCategoryList, recyclerViewRecomendList;
     private ArrayList<RecomendedModel> recomendedModels = new ArrayList<>();
     private RecomendedAdapter recomendedAdapter;
@@ -82,6 +84,18 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CategoryScreen.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        //Settings
+        settingsBtn = findViewById(R.id.SettingsBtn);
+
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SettingsScreen.class);
                 startActivity(intent);
                 finish();
             }
