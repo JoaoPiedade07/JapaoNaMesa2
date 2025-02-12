@@ -23,7 +23,7 @@ import java.util.List;
 public class ProfileScreen extends AppCompatActivity {
 
     LinearLayout homescreen, favouritescreen;
-    private RecyclerView recyclerViewCategoryList, recyclerViewHistoryList;
+    private RecyclerView recyclerViewHistoryList;
     private ArrayList<HistoryModel> historyModels = new ArrayList<>();
     private HistoryAdapter historyAdapter;
 
@@ -55,23 +55,6 @@ public class ProfileScreen extends AppCompatActivity {
                 finish();
             }
         });
-
-        recyclerViewCategoryList = findViewById(R.id.CategoryList);
-        recyclerViewCategoryList.setHasFixedSize(true);
-        recyclerViewCategoryList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
-        List<CategoryModel> categoryModels = new ArrayList<>() ;
-        categoryModels.add(new CategoryModel(R.drawable.sushipng, "Sushi"));
-        categoryModels.add(new CategoryModel(R.drawable.ramenpng, "Ramen"));
-        categoryModels.add(new CategoryModel(R.drawable.rollspng, "Rolls"));
-        categoryModels.add(new CategoryModel(R.drawable.gyosapng, "Gyosas"));
-        categoryModels.add(new CategoryModel(R.drawable.udonpng, "Udon"));
-        categoryModels.add(new CategoryModel(R.drawable.misopng, "Soups"));
-        categoryModels.add(new CategoryModel(R.drawable.sobapng, "Soba"));
-
-        CategoryAdapter categoryAdapter = new CategoryAdapter(categoryModels, this);
-
-        recyclerViewCategoryList.setAdapter(categoryAdapter);
 
         recyclerViewHistoryList = findViewById(R.id.RecomendList);
         recyclerViewHistoryList.setHasFixedSize(true);
