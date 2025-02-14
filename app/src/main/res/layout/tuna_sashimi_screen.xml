@@ -61,7 +61,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/nigiri"
+        android:text="Tuna Sashimi is a classic Japanese dish made with thin slices of fresh, raw tuna. Light and flavorful, it is typically served with soy sauce, wasabi, and pickled ginger to enhance the fish’s natural taste."
         android:textSize="28sp"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="8dp"
