@@ -16,7 +16,7 @@ Esta aplicação é um guia interativo para descobrir a rica culinária japonesa
 
 ### Contacto
 
-Desenvolvido por João Piedade
+Desenvolvido por João Piedade,
 Email: joaoluislopespiedade07@gmail.com
 
 ## JapaoNaMesa
@@ -37,5 +37,5 @@ This app is an interactive guide to discovering the rich Japanese cuisine. Explo
 
 ### Contact
 
-Developed by João Piedade
+Developed by João Piedade,
 Email: joaoluislopespiedade07@gmail.com
